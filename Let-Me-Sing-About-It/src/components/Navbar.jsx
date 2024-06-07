@@ -1,14 +1,14 @@
 import React from 'react'
-import homeIcon from "../assets/home-icon.png"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faFile, faHouse} from "@fortawesome/free-solid-svg-icons"
 
 const Navbar = () => {
     return (
           <nav>
-            <img
-              src={homeIcon}
-              alt="home icon"
-              style={{ height: "30px", width: "auto" }}
-            />
+            <div className ="navbar-icons">
+                <FontAwesomeIcon icon={faHouse} />
+                <FontAwesomeIcon icon={faFile} />
+            </div>
           </nav>
         
       );
