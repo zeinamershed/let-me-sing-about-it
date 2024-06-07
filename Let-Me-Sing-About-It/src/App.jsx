@@ -1,17 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import HomePage from './pages/HomePage'
+import { useState } from 'react';
+import './App.css';
+import HomePage from './pages/HomePage';
+import DecadesPage from './pages/DecadesPage';
+import RandomSongPage from './pages/RandomSongPage';
+import FavoriteSongsPage from './pages/FavoriteSongsPage';
+import { Routes, Route } from "react-router-dom";
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <HomePage/>
-    </>
-  )
+	return (
+		<>
+			<Routes>
+        <Route path='/' element={<HomePage />}/>
+				<Route path='/decades' element={<DecadesPage/>}/>
+        <Route path='/random' element={<RandomSongPage/>}/>
+        <Route path='/favorites' element={<FavoriteSongsPage/>}/>
+			</Routes>
+      
+		</>
+	);
 }
 
-export default App
+export default App;
