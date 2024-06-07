@@ -12,6 +12,7 @@
 }
 
 .home-page-btn button {
+  width: 100%;
   position: relative; 
   margin: 20px;
   border: none;
@@ -68,4 +69,8 @@
 .home-page-btn button p {
   position: relative;
   z-index: 1; 
+}
+
+.random-song-div img{
+width: 500px;
 }
