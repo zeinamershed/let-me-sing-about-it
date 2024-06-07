@@ -1,26 +1,26 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from 'react';
+import './App.css';
+import HomePage from './pages/HomePage';
+import DecadesPage from './pages/DecadesPage';
+import RandomSongPage from './pages/RandomSongPage';
+import FavoriteSongsPage from './pages/FavoriteSongsPage';
+import { Routes, Route } from "react-router-dom";
 import About from '../src/pages/AboutPage'
-import { Route, Routes } from 'react-router-dom'
 
 function App() {
-  
-  return (
-    <>
-    <div>
-      <header>
 
-      <Routes>
+	return (
+		<>
+			<Routes>
+        <Route path='/' element={<HomePage />}/>
+				<Route path='/decades' element={<DecadesPage/>}/>
+        <Route path='/random' element={<RandomSongPage/>}/>
+        <Route path='/favorites' element={<FavoriteSongsPage/>}/>
         <Route path="/About" element={<About />} />
-      </Routes>
-      </header>
-
-      <h2>Ka Ra Ok</h2>
-
-      </div>
-
-      </>
-  )
+			</Routes>
+      
+		</>
+	);
 }
 
-export default App
+export default App;
