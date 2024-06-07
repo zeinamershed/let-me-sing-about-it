@@ -8,13 +8,11 @@ const RandomSongPage = () => {
   const [randomSong, setRandomSong] = useState(null); 
   useEffect(() => {
     async function fetchRandomSong() {
-      try {
-        setRandomSong(null)
+      try {        
         const { data } = await axios.get(`${API_URL}/songs`);
-        const randomIndex = Math.floor(Math.random() * data.length); 
-        setRandomSong(null)       
-        setTimeout(()=>{
-          setRandomSong(data[randomIndex]);
+        /* const randomIndex = Math.floor(Math.random() * data.length);  */
+                  setTimeout(()=>{
+          setRandomSong(data[5]);
         },2000)  
         
       
