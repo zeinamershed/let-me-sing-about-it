@@ -12,6 +12,7 @@
 }
 
 .home-page-btn button {
+  width: 100%;
   position: relative; 
   margin: 20px;
   border: none;
@@ -99,4 +100,8 @@
 .container-about h5 {
   font-family: 'Courier New', Courier, monospace;
   font-size: 15px;
+}
+
+.random-song-div img{
+width: 500px;
 }
