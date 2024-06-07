@@ -14,7 +14,7 @@ const HomePage = () => {
 				<Link to='/decades'>
 					<button className="btn-all-decades">
 						<h2>By Decade</h2>
-						<p>Because sometimes, you just want that vibe!</p>
+						<p>Because sometimes, you just want THAT vibe!</p>
 					</button>
 				</Link>
 				<Link to="/random">

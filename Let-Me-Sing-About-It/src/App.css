@@ -1,107 +1,144 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	width: 100%;
+	text-align: center;
+	min-height: 100vh;
+	background-color: rgb(200, 193, 207);
 }
 
 .home-page-btn {
-  display: flex;
-  flex-direction: column;
-  font-size: 2em;
+	display: flex;
+	flex-direction: column;
+	font-size: 2em;
 }
 
 .home-page-btn button {
-  width: 100%;
-  position: relative; 
-  margin: 20px;
-  border: none;
-  border-radius: 40px;
-  padding: 15px 30px;
-  color: aliceblue;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; 
+	width: 60%;
+	position: relative;
+	margin: 20px;
+	border: none;
+	border-radius: 40px;
+	padding: 15px 30px;
+	color: aliceblue;
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	overflow: hidden;
 }
 
 .home-page-btn button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+	transform: translateY(-5px);
+	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 
 .home-page-btn button::before {
-  content: ''; 
-  position: absolute; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); 
-  z-index: 0; 
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4);
+	z-index: 0;
 }
 
 .btn-all-songs,
 .btn-all-decades,
 .btn-rdm-songs,
 .btn-fav-songs {
-  position: relative; 
-  background-repeat: no-repeat;
-  background-size: cover;
+	position: relative;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .btn-all-songs {
-  background-image: url("src/assets/allsongs.avif");
+	background-image: url('src/assets/allsongs.avif');
+	background-position: right center;
 }
 
 .btn-all-decades {
-  background-image: url("src/assets/decades.avif");
+	background-image: url('src/assets/decades.avif');
+	background-position: right center;
 }
 
 .btn-rdm-songs {
-  background-image: url("src/assets/random.avif");
+	background-image: url('src/assets/random.avif');
+	background-position: right -150px;
 }
 
 .btn-fav-songs {
-  background-image: url("src/assets/favorites.avif");
+	background-image: url('src/assets/favorites.avif');
+	background-position: right center;
 }
 
 .home-page-btn button h2,
 .home-page-btn button p {
-  position: relative;
-  z-index: 1; 
+	position: relative;
+	z-index: 1;
 }
 .footer {
-  background-color: aliceblue;
-  height: 40px;
-  display: flex;
-  justify-content: left;
-  padding: 10px;
+	background-color: aliceblue;
+	height: 40px;
+	display: flex;
+	justify-content: left;
+	padding: 10px;
 }
 .footer img {
-  width: 50px;
-  height: 40px;
+	width: 50px;
+	height: 40px;
 }
-.footer h5{
-  margin: 10px;
-  color: black;
+.footer h5 {
+	margin: 10px;
+	color: black;
 }
 .container-about {
-  border: 3px solid white;
-  display: flex;
-  justify-content: space-between;
-  text-align: center;
-  padding: 20px;
+	border: 3px solid white;
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	padding: 20px;
 }
 .container-about img {
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
+	border-radius: 50%;
+	width: 150px;
+	height: 150px;
 }
 .container-about h5 {
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 15px;
+	font-family: 'Courier New', Courier, monospace;
+	font-size: 15px;
 }
 
-.random-song-div img{
-width: 500px;
+.random-song-div img {
+	width: 500px;
+}
+
+.nav {
+	height: 20vh;
+	width: 100%;
+	background: rgb(79, 12, 134);
+	background: linear-gradient(
+		50deg,
+		rgba(79, 12, 134, 1) 17%,
+		rgba(121, 14, 137, 1) 43%,
+		rgba(16, 18, 143, 1) 69%,
+		rgba(0, 212, 255, 1) 100%
+	);
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+
+.nav a {
+	color: aliceblue;
+	transition: transform 0.3s ease;
+	overflow: hidden;
+	font-size: 1.2em;
+}
+
+.nav a:hover {
+	transform: translateY(-5px);
+}
+
+.navbar-icons {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	color: aliceblue;
 }

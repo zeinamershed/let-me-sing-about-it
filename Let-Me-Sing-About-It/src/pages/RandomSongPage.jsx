@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { API_URL } from "../config.js";
 import { Link } from 'react-router-dom';
+import discoBall from "../assets/discoball.webp"
 
 const RandomSongPage = () => {
   const [randomSong, setRandomSong] = useState(null); 
@@ -10,8 +11,12 @@ const RandomSongPage = () => {
       try {
         setRandomSong(null)
         const { data } = await axios.get(`${API_URL}/songs`);
-        const randomIndex = Math.floor(Math.random() * data.length);        
+        const randomIndex = Math.floor(Math.random() * data.length); 
+        setRandomSong(null)       
+        setTimeout(()=>{
           setRandomSong(data[randomIndex]);
+        },2000)  
+        
       
       } catch (error) {
         console.log(error);
@@ -23,7 +28,7 @@ const RandomSongPage = () => {
   return (
     <div className="random-song-div">
       {randomSong === null ? ( 
-        <p>Loading...</p>
+        <><h1>Loading...</h1><img src={discoBall} alt="Jumpy disco ball" /></>
       ) : (
         <div>
           <h1>Congratulations!</h1>
