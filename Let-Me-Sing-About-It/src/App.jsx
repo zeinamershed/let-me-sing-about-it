@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import About from '../src/pages/AboutPage'
 import { useState } from 'react'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer';
 
 function App() {
 
@@ -21,6 +22,8 @@ function App() {
         <Route path="/About" element={<About />} />
 			</Routes>
       
+      <br />
+      <Footer />
 		</>
 	);
  
