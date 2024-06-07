@@ -69,3 +69,34 @@
   position: relative;
   z-index: 1; 
 }
+.footer {
+  background-color: aliceblue;
+  height: 40px;
+  display: flex;
+  justify-content: left;
+  padding: 10px;
+}
+.footer img {
+  width: 50px;
+  height: 40px;
+}
+.footer h5{
+  margin: 10px;
+  color: black;
+}
+.container-about {
+  border: 3px solid white;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 20px;
+}
+.container-about img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+}
+.container-about h5 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 15px;
+}

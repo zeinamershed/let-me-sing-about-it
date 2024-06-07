@@ -5,7 +5,8 @@ import DecadesPage from './pages/DecadesPage';
 import RandomSongPage from './pages/RandomSongPage';
 import FavoriteSongsPage from './pages/FavoriteSongsPage';
 import { Routes, Route } from "react-router-dom";
-import About from '../src/pages/AboutPage'
+import About from '../src/pages/AboutPage';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -19,6 +20,8 @@ function App() {
         <Route path="/About" element={<About />} />
 			</Routes>
       
+      <br />
+      <Footer />
 		</>
 	);
 }

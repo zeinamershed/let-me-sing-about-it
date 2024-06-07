@@ -19,28 +19,28 @@ function AboutPage() {
         <div className='container-about'>
             <div>
                 <img src='' alt='andria-img' />
-                <h4>Hi, I'm Andreia, a web development student at Ironhack. For "Let Me Sing About It," 
+                <h5>I'm Andreia, a web development student at Ironhack. For "Let Me Sing About It," 
                     I specialized in front-end development using React. 
-                    I love coding and enjoy.</h4>
+                    I love coding and enjoy.</h5>
                 <a href='' ></a>
                 <a href='' ></a>
 
             </div>
             <div>
                 <img src={dani} alt='dani-img' />
-                <h4>Hi, I'm Daniela, a web development student at Ironhack. For "Let Me Sing About It," 
+                <h5>I'm Daniela, a web development student at Ironhack. For "Let Me Sing About It," 
                     I specialized in front-end development using React.
-                     I love coding and enjoy .</h4>
-                <a href='' ></a>
+                     I love coding and enjoy .</h5>
+                <a href='https://github.com/Dani-A-Dias' >Dani's GitHub</a> <br />
                 <a href='' ></a>
 
             </div>
             <div>
                 <img src={zeina} alt='zeina-img' />
-                <h4>Hi, I'm Zeina, a web development student at Ironhack. For "Let Me Sing About It,"
+                <h5>I'm Zeina, a web development student at Ironhack. For "Let Me Sing About It,"
                      I specialized in front-end development using React.
-                      I love coding and enjoy shopping traveling.</h4>
-                <a href="https://github.com/zeinamershed">Zeina's GitHub</a>
+                      I love coding.</h5>
+                <a href="https://github.com/zeinamershed">Zeina's GitHub</a>  <br />
                 <a href="https://www.linkedin.com/in/zeina-mershed-7a64b6281?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Zeina's LinkedIn</a>
             </div>
 
