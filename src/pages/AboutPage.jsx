@@ -6,8 +6,8 @@ function AboutPage() {
   return (
     <div className='aboutUs'>
       <h1>About US</h1>
-      <p>Welcome to "Let Me Sing About It," a vibrant karaoke app designed by three passionate web development students:
-        Andriea, Daniela and Zeina. At Ironhack Institute, 
+      <p className='p-indent'>Welcome to "Let Me Sing About It," a vibrant karaoke app designed by three passionate web development students:
+        Andreia, Daniela and Zeina. At Ironhack Institute, 
         under the mentorship of our dedicated teacher, Joshua, we've poured our energy into crafting this platform.
         In just five weeks of our Bootcamp, utilizing JavaScript, React, and various APIs, we've brought to life an 
         app that's not just about singing but also about expressing yourself through music. With a diverse collection
@@ -22,8 +22,8 @@ function AboutPage() {
                 <h5>I'm Andreia, a web development student at Ironhack. For "Let Me Sing About It," 
                     I specialized in front-end development using React. 
                     I love coding and enjoy.</h5>
-                <a href='' ></a>
-                <a href='' ></a>
+                <a href='https://github.com/andreiapsa' >Andreia's GitHub</a><br />
+                <a href='' >Andreia's LinkedIn</a>
 
             </div>
             <div>
@@ -32,7 +32,7 @@ function AboutPage() {
                     I specialized in front-end development using React.
                      I love coding and enjoy .</h5>
                 <a href='https://github.com/Dani-A-Dias' >Dani's GitHub</a> <br />
-                <a href='' ></a>
+                <a href='https://www.linkedin.com/in/daniela-dias-604926243/' >Dani's LinkedIn</a>
 
             </div>
             <div>
