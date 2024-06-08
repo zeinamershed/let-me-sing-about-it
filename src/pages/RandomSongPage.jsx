@@ -6,13 +6,14 @@ import discoBall from "../assets/discoball.webp"
 
 const RandomSongPage = () => {
   const [randomSong, setRandomSong] = useState(null); 
+  let randomIndex = 0;
   useEffect(() => {
     async function fetchRandomSong() {
       try {        
         const { data } = await axios.get(`${API_URL}/songs`);
-        /* const randomIndex = Math.floor(Math.random() * data.length);  */
+        getRandomIndex(data)
                   setTimeout(()=>{
-          setRandomSong(data[5]);
+          setRandomSong(data[randomIndex]);
         },2000)  
         
       
@@ -22,6 +23,10 @@ const RandomSongPage = () => {
     }
     fetchRandomSong();
   }, []);
+
+  function getRandomIndex(array){
+    return randomIndex = Math.floor(Math.random() * array.length);
+  }
 
   return (
     <div className="random-song-div">
