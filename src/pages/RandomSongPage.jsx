@@ -39,8 +39,9 @@ const RandomSongPage = () => {
 			) : (
 				<div>
 					<h1>Congratulations!</h1>
-					<h3>Your random song is...!</h3>
+					<h3>Your random song is...</h3>
           <h1>{randomSong.song}</h1>
+          <hr className='hr-random'/>
 					<div className='random-song-info-container'>
 						<div>
 							<img
@@ -58,6 +59,7 @@ const RandomSongPage = () => {
 							<section>{randomSong.lyrics}</section>
 						</div>
 					</div>
+          <hr className='hr-random'/>
 
 					<h2>Sing it here!</h2>
 					<div className="video-container">

@@ -2,7 +2,7 @@ import React from 'react'
 
 const FavoriteSongsPage = () => {
   return (
-    <div>FavoriteSongsPage</div>
+    <div className='for-all-divs'>FavoriteSongsPage</div>
   )
 }
 
