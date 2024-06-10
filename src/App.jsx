@@ -12,6 +12,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer';
 import AllSongsPage from './pages/AllSongsPage';
 import OneSongDetails from './pages/OneSongDetails';
+import NotFound from './pages/NotFound';
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -53,6 +54,7 @@ function App() {
         <Route path='/favorites' element={<FavoriteSongsPage/>}/>
         <Route path="/About" element={<About />} />
         <Route path="/songs/:songId" element={<OneSongDetails songs={songs}/>}/>
+        <Route path="*" element={<NotFound />} />
 			</Routes>
       
       <br />
