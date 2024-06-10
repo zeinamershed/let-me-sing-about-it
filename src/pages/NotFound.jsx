@@ -8,7 +8,7 @@ const NotFound = () => {
       nav("/");
     }
     return (
-      <div className="not-found-container">
+      <div className="for-all-divs">
         <br/>
         <h1>404 Not Found</h1>
         <br/>
