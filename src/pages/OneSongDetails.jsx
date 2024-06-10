@@ -11,7 +11,7 @@ const OneSongDetails = ({ songs }) => {
 
 	return (
 		<div className="for-all-divs">
-			<div>
+			<div className='one-song-detail'>
 				<img
 					src={filteredSong.image}
 					alt={filteredSong.song}
