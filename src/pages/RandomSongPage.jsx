@@ -64,8 +64,8 @@ const RandomSongPage = () => {
 					<h2>Sing it here!</h2>
 					<div className="video-container">
 						<iframe
-							width="750"
-							height="425"
+							width="650"
+							height="400"
 							src={randomSong.videoUrl}
 							title="YouTube video player"
 							frameBorder="0"

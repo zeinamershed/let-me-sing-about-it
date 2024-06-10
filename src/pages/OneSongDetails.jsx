@@ -39,7 +39,7 @@ const OneSongDetails = () => {
 					<Link to="/">
 						<button className='random-btn'>Back</button>
 					</Link>
-                    {/* <Link to={`/edit-rental/${filteredSongs.id}`}>
+                    {/* <Link to={`/edit-song/${filteredSongs.id}`}>
                      <button className="edit-btn">Edit song</button>
                     </Link> */}
                 </div>  
