@@ -334,6 +334,7 @@ input[type="text"] {
 
 .for-all-songs-btn {
 	background: none;
+	color: black;
 }
 
 .for-all-songs-btn:hover {
