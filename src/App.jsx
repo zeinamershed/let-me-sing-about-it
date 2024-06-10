@@ -8,6 +8,7 @@ import About from '../src/pages/AboutPage'
 import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer';
+import AllSongsPage from './pages/AllSongsPage';
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
     <Navbar />
 			<Routes>
         <Route path='/' element={<HomePage />}/>
+        <Route path='/songs' element={<AllSongsPage/>}/>
 				<Route path='/decades' element={<DecadesPage/>}/>
         <Route path='/random' element={<RandomSongPage/>}/>
         <Route path='/favorites' element={<FavoriteSongsPage/>}/>
