@@ -9,8 +9,40 @@ import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer';
 import AllSongsPage from './pages/AllSongsPage';
+import OneSongDetails from './pages/OneSongDetails';
 
 function App() {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*  function handleDeleteUnit(unitId) {
+    const filteredRentals = rentals.filter((rental) => {
+      if (rental.id !== unitId) {
+        return true;
+      }
+    });
+    setRentals(filteredRentals);
+  }
+  function handleAddToFavourites(unit) {
+    setFavRentals([...favRentals, unit]);
+  } */
 
 	return (
 		<>
@@ -22,6 +54,8 @@ function App() {
         <Route path='/random' element={<RandomSongPage/>}/>
         <Route path='/favorites' element={<FavoriteSongsPage/>}/>
         <Route path="/About" element={<About />} />
+        <Route path="/songs/:songId" element={<OneSongDetails/>}
+          />
 			</Routes>
       
       <br />
