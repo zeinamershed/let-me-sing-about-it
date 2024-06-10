@@ -8,6 +8,7 @@ import About from '../src/pages/AboutPage'
 import { useState } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer';
+import AddSongsPage from './pages/AddSongsPage';
 
 function App() {
 
@@ -19,7 +20,8 @@ function App() {
 				<Route path='/decades' element={<DecadesPage/>}/>
         <Route path='/random' element={<RandomSongPage/>}/>
         <Route path='/favorites' element={<FavoriteSongsPage/>}/>
-        <Route path="/About" element={<About />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/add' element={<AddSongsPage />} />
 			</Routes>
       
       <br />

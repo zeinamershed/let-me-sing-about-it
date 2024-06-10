@@ -29,6 +29,12 @@ const HomePage = () => {
 						<p>The ones you love to sing the most!</p>
 					</button>
 				</Link>
+				<Link to='/add'>
+					<button className="btn-add-songs">
+						<h2>Add your owns</h2>
+						<p></p>
+					</button>
+				</Link>
 			</div>
 		</div>
 	);

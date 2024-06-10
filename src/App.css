@@ -43,7 +43,8 @@
 .btn-all-songs,
 .btn-all-decades,
 .btn-rdm-songs,
-.btn-fav-songs {
+.btn-fav-songs,
+.btn-add-songs {
 	position: relative;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -68,12 +69,18 @@
 	background-image: url('src/assets/favorites.avif');
 	background-position: right center;
 }
+.btn-add-songs {
+	background-image: url('src/assets/addsongs.jpg');
+	background-position: center;
+}
 
 .home-page-btn button h2,
 .home-page-btn button p {
 	position: relative;
 	z-index: 1;
 }
+
+/* footer */
 .footer {
 	background-color: aliceblue;
 	height: 7vh;
@@ -94,7 +101,7 @@
 .footer a{
 	display: flex;
 }
-
+/* About page */
 .aboutUs{
 	color: aliceblue;
 	margin: 5vh 10vw;
@@ -287,6 +294,44 @@
 	background-position: right center;	
 }
 
+/* Add page */
+.add-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+input[type="text"] {
+  width: 40%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 5px;
+}
+.button-form {
+	background: #303169;
+	color: #fff;
+	margin-left: 40%;
+	margin-right: 40%;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background 0.3s ease;
+  }
+  
+.button-form:hover {
+	background: #423d8b;
+}
+
+.add-list {
+	display: inline-block;
+	
+	justify-content: space-between;
+	border: 5px solid red;
+
+}
 
 
 
