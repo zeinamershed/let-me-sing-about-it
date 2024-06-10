@@ -1,6 +1,7 @@
 import React from 'react'
 import zeina from '../assets/images/zeinas-img.jpeg';
 import dani from '../assets/images/danis-img.jpg';
+import andreia from '../assets/images/andreias-img.jpg'
 
 function AboutPage() {
   return (
@@ -18,12 +19,12 @@ function AboutPage() {
         inspiration to all who use it.</p>
         <div className='container-about'>
             <div>
-                <img src='' alt='andria-img' />
+                <img src={andreia} alt='andreia-img' />
                 <h5>I'm Andreia, a web development student at Ironhack. For "Let Me Sing About It," 
                     I specialized in front-end development using React. 
                     I love coding and enjoy.</h5>
                 <a href='https://github.com/andreiapsa' >Andreia's GitHub</a><br />
-                <a href='' >Andreia's LinkedIn</a>
+                <a href='https://www.linkedin.com/in/andreiasa/' >Andreia's LinkedIn</a>
 
             </div>
             <div>

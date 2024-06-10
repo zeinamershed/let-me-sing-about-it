@@ -5,7 +5,7 @@ const HomePage = () => {
 	return (
 		<div>
 			<div className="home-page-btn">
-				<Link>
+				<Link to="/songs">
 					<button className="btn-all-songs">
 						<h2>All Songs</h2>
 						<p>A list of all the songs we think you'll like!</p>

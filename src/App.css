@@ -98,18 +98,17 @@
 	color: black;
 }
 
-.footer a{
+.footer a {
 	display: flex;
 }
 /* About page */
-.aboutUs{
+.aboutUs {
 	color: aliceblue;
 	margin: 5vh 10vw;
 	min-height: 64.5vh;
-	
 }
 
-.p-indent{
+.p-indent {
 	text-indent: 40px;
 }
 .container-about {
@@ -130,7 +129,7 @@
 	padding: 5px 30px;
 }
 
-.random-song-div{
+.random-song-div {
 	min-height: 71.5vh;
 	color: black;
 	width: 70%;
@@ -141,27 +140,24 @@
 
 .random-song-div img {
 	height: 40vh;
-	width: auto; 
+	width: auto;
 	max-width: 100%;
-	object-fit: cover; 
+	object-fit: cover;
 	padding-right: 3vw;
+}
 
-  }
-
-.random-song-info-container{
+.random-song-info-container {
 	display: flex;
 	flex-direction: row-reverse;
-	margin: 5vh 0vw;	
+	margin: 5vh 0vw;
 	width: 100%;
 	justify-content: space-between;
-	
 }
-.random-song-info{
+.random-song-info {
 	text-align: left;
 	font-size: 1.3em;
 	padding-left: 10vh;
 }
-
 
 .nav {
 	position: relative;
@@ -201,42 +197,42 @@
 	color: aliceblue;
 	background: rgb(79, 12, 134);
 	background: linear-gradient(
-	  50deg,
-	  rgba(79, 12, 134, 1) 17%,
-	  rgba(121, 14, 137, 1) 43%,
-	  rgba(0, 212, 255, 1) 100%
+		50deg,
+		rgba(79, 12, 134, 1) 17%,
+		rgba(121, 14, 137, 1) 43%,
+		rgba(0, 212, 255, 1) 100%
 	);
 	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
 	margin: 2vh;
-	padding: 10px 20px; 
-	border: none; 
-	border-radius: 5px; 
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
 	cursor: pointer;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	overflow: hidden;
-  }
-  
-  .random-btn:hover {
+}
+
+.random-btn:hover {
 	transform: translateY(-5px);
-	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5); 
-  }
+	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}
 
-  .hr-random{
+.hr-random {
 	width: 80%;
-  }
+}
 
-  .for-all-divs{
+.for-all-divs {
 	min-height: 72.5vh;
 	color: black;
 	width: 70%;
 	margin: 0 auto;
 	background-color: aliceblue;
 	padding: 1vh 0vw;
-  }
+}
 
- /* decades */
+/* decades */
 
- .decades-bts button {
+.decades-bts button {
 	width: 40%;
 	position: relative;
 	margin: 20px;
@@ -272,26 +268,26 @@
 	z-index: 1;
 }
 
-.btn-80{
+.btn-80 {
 	background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-	background-position: right center;	
+	background-position: right center;
 }
 
-.btn-90{
+.btn-90 {
 	background-image: url('https://images.unsplash.com/photo-1453738773917-9c3eff1db985?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-	background-position: right -70px;	
+	background-position: right -70px;
 }
-.btn-00{
+.btn-00 {
 	background-image: url('https://images.unsplash.com/photo-1619983081563-430f63602796?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-	background-position: right center;	
+	background-position: right center;
 }
-.btn-10{
+.btn-10 {
 	background-image: url('https://images.unsplash.com/photo-1470259078422-826894b933aa?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-	background-position: right center;	
+	background-position: right center;
 }
-.btn-20{
+.btn-20 {
 	background-image: url('https://images.unsplash.com/photo-1511367734837-f2956f0d8020?q=80&w=2005&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-	background-position: right center;	
+	background-position: right center;
 }
 
 /* Add page */
@@ -318,7 +314,7 @@ input[type="text"] {
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
-	transition: background 0.3s ease;
+
   }
   
 .button-form:hover {
@@ -330,8 +326,30 @@ input[type="text"] {
 	
 	justify-content: space-between;
 	border: 5px solid red;
-
 }
 
+.all-songs-info-container {
+	border-bottom: 1px solid grey;
+}
 
+.for-all-songs-btn {
+	background: none;
+}
 
+.for-all-songs-btn:hover {
+	color: rgba(79, 12, 134, 1);
+}
+
+.links-songs {
+	color: black;
+}
+.links-songs :hover {
+	color: rgba(79, 12, 134, 1);
+}
+
+.one-song-detail img {
+	height: 40vh;
+	width: auto;
+	max-width: 100%;
+	object-fit: cover;
+}
