@@ -308,3 +308,41 @@
 	max-width: 100%;
 	object-fit: cover;
 }
+
+.sign-up-form{
+	display:flex;
+	flex-direction: column;
+	width: fit-content;
+	margin: 0 auto;
+}
+.sign-up-form input{
+	display:flex;
+	flex-direction: column;
+	width: fit-content;
+	margin:1vh
+}
+
+.sign-up-form button{	
+	font-size: 1.3em;
+	color: aliceblue;
+	background: rgb(79, 12, 134);
+	background: linear-gradient(
+		50deg,
+		rgba(79, 12, 134, 1) 17%,
+		rgba(121, 14, 137, 1) 43%,
+		rgba(0, 212, 255, 1) 100%
+	);
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+	margin: 2vh;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	overflow: hidden;
+}
+
+.sign-up-form button:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+}

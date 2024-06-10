@@ -13,9 +13,12 @@ import Footer from './components/Footer';
 import AllSongsPage from './pages/AllSongsPage';
 import OneSongDetails from './pages/OneSongDetails';
 import NotFound from './pages/NotFound';
+import SignUp from './components/SignUp';
+import LogInn from './components/LogInn';
 
 function App() {
   const [songs, setSongs] = useState([]);
+  const [currUser, setCurrUser] = useState()
 
   useEffect(() => {
     const fetchSongs = async () => {
@@ -55,6 +58,8 @@ function App() {
         <Route path="/About" element={<About />} />
         <Route path="/songs/:songId" element={<OneSongDetails songs={songs}/>}/>
         <Route path="*" element={<NotFound />} />
+        <Route path="/signup" element={<SignUp setCurrUser={setCurrUser}/>}/>
+        <Route path="/login" element={<LogInn setCurrUser={setCurrUser}/>}/>
 			</Routes>
       
       <br />

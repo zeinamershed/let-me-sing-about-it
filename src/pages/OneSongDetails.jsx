@@ -19,11 +19,12 @@ const OneSongDetails = ({ songs }) => {
 			</div>
 			<h2>{filteredSong.song}</h2>
 			<h4>
-				{filteredSong.artist}, {filteredSong.genre}
+				{filteredSong.artist}, {filteredSong.album}, {filteredSong.genre}
 			</h4>
 			<p>{filteredSong.decade}</p>
-			<h4>Lyrics:</h4>
-			<p>{filteredSong.lyrics}</p>
+			<h4>Trivia</h4>
+			<p>About the artist:{filteredSong.trivia.aboutArtist}</p>
+			<p>About the song:{filteredSong.trivia.aboutSong}</p>
 			<br />
 			<hr className="hr-random" />
 
