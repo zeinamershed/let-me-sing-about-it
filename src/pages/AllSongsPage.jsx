@@ -11,8 +11,9 @@ const AllSongsPage = ({ songs }) => {
 		<div className="for-all-divs">
 			{songs &&
 				songs.map((oneSong) => (
+          
 					<div key={oneSong.id} className="all-songs-info-container">
-						
+						<Link to={`/songs/${oneSong.id}`} className='links-songs'>
 						<div >
 							<div className="all-songs-song-info">
 								<h2>{oneSong.song}</h2>
@@ -28,8 +29,8 @@ const AllSongsPage = ({ songs }) => {
 							</div>
 						</div>
  
-						<Link to={`/songs/${oneSong.id}`}>
-						<button className="for-all-songs-btn"><FontAwesomeIcon icon={faCircleInfo} /></button>
+						
+						
             </Link>
 						<button className="for-all-songs-btn"><FontAwesomeIcon icon={regularHeart} /></button>
 						<button className="for-all-songs-btn"><FontAwesomeIcon icon={faPenToSquare} /></button>
