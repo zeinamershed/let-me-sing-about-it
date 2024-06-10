@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faFile, faHouse} from "@fortawesome/free-solid-svg-icons"
+import {faFile, faHouse , faCircleInfo} from "@fortawesome/free-solid-svg-icons"
 import {Link, NavLink} from "react-router-dom"
 
 const Navbar = () => {
