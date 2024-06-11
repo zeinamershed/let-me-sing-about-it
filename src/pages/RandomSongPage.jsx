@@ -40,26 +40,32 @@ const RandomSongPage = () => {
 				<div>
 					<h1>Congratulations!</h1>
 					<h3>Your random song is...</h3>
-          <h1>{randomSong.song}</h1>
-          <hr className='hr-random'/>
-					<div className='random-song-info-container'>
+					<h1>{randomSong.title}</h1>
+					<hr className="hr-random" />
+					<div className="random-song-info-container">
 						<div>
 							<img
 								src={randomSong.image}
-								alt={`Song of ${randomSong.song}`}
+								alt={`Song of ${randomSong.title}`}
 							/>
+							{/* <h5>{randomSong.attribution}</h5> */}
 						</div>
-						<div className='random-song-info'>
-							
-							<p><strong>Artist:</strong> {randomSong.artist}</p>
-							<p><strong>Genre:</strong> {randomSong.genre}</p>
-							<p><strong>Decade:</strong> {randomSong.decade}</p>
+						<div className="random-song-info">
+							<p>
+								<strong>Artist:</strong> {randomSong.artist}
+							</p>
+							<p>
+								<strong>Genre:</strong> {randomSong.genre}
+							</p>
+							<p>
+								<strong>Decade:</strong> {randomSong.decade}
+							</p>
 							<br />
 							<h4>Lyrics:</h4>
 							<section>{randomSong.lyrics}</section>
 						</div>
 					</div>
-          <hr className='hr-random'/>
+					<hr className="hr-random" />
 
 					<h2>Sing it here!</h2>
 					<div className="video-container">
@@ -75,7 +81,7 @@ const RandomSongPage = () => {
 					</div>
 
 					<Link to="/">
-						<button className='random-btn'>Back</button>
+						<button className="random-btn">Back</button>
 					</Link>
 				</div>
 			)}

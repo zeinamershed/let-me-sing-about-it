@@ -19,10 +19,12 @@ const OneSongDetails = ({ songs, addFavorite, removeFavorite, currUser }) => {
 			<div className="one-song-detail">
 				<img
 					src={filteredSong.image}
-					alt={filteredSong.song}
+					alt={filteredSong.title}
 				/>
+				{/* <p className='small-text-license'>{filteredSong.attribution}</p> */}
 			</div>
-			<h2>{filteredSong.song} {currUser && currUser.favorites.includes(oneSong.id) ? (
+			<div className='one-song-info'> 
+			<h2>{filteredSong.title} {currUser && currUser.favorites.includes(filteredSong.id) ? (
               <button onClick={() => removeFavorite(filteredSong.id)}className="for-all-songs-btn"><FontAwesomeIcon icon={solidHeart} /></button>
             ) : (
               <button onClick={() => addFavorite(filteredSong.id)} className="for-all-songs-btn"><FontAwesomeIcon icon={regularHeart} /></button>
@@ -31,6 +33,7 @@ const OneSongDetails = ({ songs, addFavorite, removeFavorite, currUser }) => {
 				{filteredSong.artist}, {filteredSong.album}, {filteredSong.genre},{' '}
 				{filteredSong.decade}
 			</h4>
+			</div>
 			<div className="trivia-box">
 				<h4>Trivia</h4>
 				<div className='trivia-box-inside'>
