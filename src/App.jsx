@@ -20,13 +20,6 @@ import ProfilePage from './pages/ProfilePage';
 
 function App() {
   const [songs, setSongs] = useState([]);
-  const addSong = (newSong) => {
-    setSongs((prevSongs) => [
-      ...prevSongs,
-      { id: prevSongs.length + 1, ...newSong }
-    ]);
-  };
-
   const [currUser, setCurrUser] = useState();
   
 
@@ -72,17 +65,26 @@ function App() {
     }
   };
 
+  const addSong = async (newSong) => {
+    try {
+      const { data } = await axios.post(`${API_URL}/songs`, newSong);
+      setSongs((prevSongs) => [...prevSongs, data]);
+    } catch (error) {
+      console.log("Error adding song", error);
+    }
+  };
+
   return (
     <>
       <Navbar currUser={currUser} setCurrUser={setCurrUser} />
       <Routes>
-        <Route path='/' element={<HomePage />} />
+        <Route path='/' element={<HomePage currUser={currUser}/>} />
         <Route path='/songs' element={<AllSongsPage songs={songs} addFavorite={addFavorite} removeFavorite={removeFavorite} currUser={currUser} />} />
         <Route path='/decades' element={<DecadesPage />} />
         <Route path='/random' element={<RandomSongPage />} />
         <Route path='/favorites' element={<FavoriteSongsPage currUser={currUser} removeFavorite={removeFavorite} />} />
         <Route path='/about' element={<About />} />
-        <Route path='/add' element={<AddSongsPage addSong={addSong} />} />
+        <Route path='/add' element={<AddSongsPage addSong={addSong} currUser={currUser} />} />
         <Route path="/About" element={<About />} />
         <Route path="/songs/:songId" element={<OneSongDetails songs={songs} addFavorite={addFavorite} removeFavorite={removeFavorite} currUser={currUser} />} />
         <Route path="*" element={<NotFound />} />

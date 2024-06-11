@@ -471,3 +471,8 @@ padding: 0;
 	width: 80%;
 }
 
+.add-song-form{
+	margin: 0 auto;
+	width: 70%;
+	text-align: left;
+}
