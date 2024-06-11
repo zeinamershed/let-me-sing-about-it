@@ -85,16 +85,17 @@
 	background-color: aliceblue;
 	height: 7vh;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
+	align-content: center;
 	align-items: center;
-	padding: 5px;
 }
 .footer img {
-	width: 50px;
+	width: 40px;
 	height: 40px;
+	margin: 1.5vh 1vw;
 }
 .footer h5 {
-	margin: 10px;
+	
 	color: black;
 }
 
@@ -222,7 +223,7 @@
 }
 
 .for-all-divs {
-	min-height: 72.5vh;
+	min-height: 73.5vh;
 	color: black;
 	width: 70%;
 	margin: 0 auto;
