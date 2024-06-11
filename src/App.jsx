@@ -20,13 +20,6 @@ import ProfilePage from './pages/ProfilePage';
 
 function App() {
   const [songs, setSongs] = useState([]);
-  const addSong = (newSong) => {
-    setSongs((prevSongs) => [
-      ...prevSongs,
-      { id: prevSongs.length + 1, ...newSong }
-    ]);
-  };
-
   const [currUser, setCurrUser] = useState();
   
 
@@ -53,7 +46,7 @@ function App() {
 
       await axios.patch(`${API_URL}/users/${currUser.id}`, { favorites: updatedFavorites });
       setCurrUser(updatedUser);
-    } catch (error) {
+      } catch (error) {
       console.error('Error adding favorite:', error);
     }
   };
@@ -72,17 +65,32 @@ function App() {
     }
   };
 
+  const addSong = (newSong) => {
+    setSongs((prevSongs) => [...prevSongs, newSong]);
+  };
+
+
+  async function deleteSong(songId) {
+    try {
+      await axios.delete(`${API_URL}/songs/${songId}`);
+      setSongs((prevSongs) => prevSongs.filter((song) => song.id !== songId));
+      console.log('Song deleted successfully');
+    } catch (error) {
+      console.error('Error deleting song:', error);
+    }
+  }
+
   return (
     <>
       <Navbar currUser={currUser} setCurrUser={setCurrUser} />
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/songs' element={<AllSongsPage songs={songs} addFavorite={addFavorite} removeFavorite={removeFavorite} currUser={currUser} />} />
+        <Route path='/' element={<HomePage currUser={currUser}/>} />
+        <Route path='/songs' element={<AllSongsPage songs={songs} addFavorite={addFavorite} removeFavorite={removeFavorite} currUser={currUser} deleteSong={deleteSong}/>} />
         <Route path='/decades' element={<DecadesPage />} />
         <Route path='/random' element={<RandomSongPage />} />
         <Route path='/favorites' element={<FavoriteSongsPage currUser={currUser} removeFavorite={removeFavorite} />} />
         <Route path='/about' element={<About />} />
-        <Route path='/add' element={<AddSongsPage addSong={addSong} />} />
+        <Route path='/add' element={<AddSongsPage addSong={addSong} currUser={currUser} />} />
         <Route path="/About" element={<About />} />
         <Route path="/songs/:songId" element={<OneSongDetails songs={songs} addFavorite={addFavorite} removeFavorite={removeFavorite} currUser={currUser} />} />
         <Route path="*" element={<NotFound />} />

@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faCircleInfo,
-	faTrash,
-	faPenToSquare,
-} from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 
-const AllSongsPage = ({ songs, addFavorite, removeFavorite, currUser }) => {
+const AllSongsPage = ({
+	songs,
+	addFavorite,
+	removeFavorite,
+	currUser,
+	deleteSong,
+}) => {
 	return (
 		<div className="for-all-divs">
 			{songs &&
@@ -37,28 +39,35 @@ const AllSongsPage = ({ songs, addFavorite, removeFavorite, currUser }) => {
 								</div>
 							</div>
 						</Link>
-						{currUser && currUser.favorites.includes(oneSong.id) ? (
-							<button
-								onClick={() => removeFavorite(oneSong.id)}
-								className="for-all-songs-btn"
-							>
-								<FontAwesomeIcon icon={solidHeart} />
-							</button>
-						) : (
-							<button
-								onClick={() => addFavorite(oneSong.id)}
-								className="for-all-songs-btn"
-							>
-								<FontAwesomeIcon icon={regularHeart} />
-							</button>
-						)}
+						{currUser && (
+							<div>
+								{currUser.favorites.includes(oneSong.id) ? (
+									<button
+										onClick={() => removeFavorite(oneSong.id)}
+										className="for-all-songs-btn"
+									>
+										<FontAwesomeIcon icon={solidHeart} />
+									</button>
+								) : (
+									<button
+										onClick={() => addFavorite(oneSong.id)}
+										className="for-all-songs-btn"
+									>
+										<FontAwesomeIcon icon={regularHeart} />
+									</button>
+								)}
 
-						<button className="for-all-songs-btn">
-							<FontAwesomeIcon icon={faPenToSquare} />
-						</button>
-						<button className="for-all-songs-btn">
-							<FontAwesomeIcon icon={faTrash} />
-						</button>
+								<button className="for-all-songs-btn">
+									<FontAwesomeIcon icon={faPenToSquare} />
+								</button>
+								<button
+									onClick={() => deleteSong(oneSong.id)}
+									className="for-all-songs-btn"
+								>
+									<FontAwesomeIcon icon={faTrash} />
+								</button>
+							</div>
+						)}
 					</div>
 				))}
 		</div>

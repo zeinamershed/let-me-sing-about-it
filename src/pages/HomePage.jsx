@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const HomePage = () => {
+const HomePage = ({currUser}) => {
 	return (
 		<div>
 			<div className="home-page-btn">
@@ -29,12 +29,13 @@ const HomePage = () => {
 						<p>The ones you love to sing the most!</p>
 					</button>
 				</Link>
-				<Link to='/add'>
+				{currUser?(<Link to='/add'>
 					<button className="btn-add-songs">
 						<h2>Add your owns</h2>
 						<p></p>
 					</button>
-				</Link>
+				</Link>):(<span> </span>)}
+				
 			</div>
 		</div>
 	);

@@ -1,11 +1,22 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import { API_URL } from '../config';
 
-function AddSongsPage( {addSong} ) {
-  
-  const [song, setSong] = useState({ title: '', artist: '', genre: '', decade: '' });
+function AddSongsPage({ addSong, currUser }) {
+  const [song, setSong] = useState({
+    title: '',
+    artist: '',
+    genre: '',
+    decade: '',
+    image: '',
+    attribution: '',
+    trivia: {
+      aboutArtist: '',
+      aboutSong: '',
+    },
+    videoUrl: '',
+  });
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -16,30 +27,47 @@ function AddSongsPage( {addSong} ) {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addSong(song);
-    setSong({ title: '', artist: '', genre: '', decade: '' });
+  const handleTriviaChange = (e) => {
+    const { name, value } = e.target;
+    setSong((prevSong) => ({
+      ...prevSong,
+      trivia: {
+        ...prevSong.trivia,
+        [name]: value,
+      },
+    }));
   };
- 
-  const { data } =  axios.post(`${API_URL}/songs`, newSong);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const songWithUser = {
+      ...song,
+      uploadedBy: {
+        userId: currUser.id,
+        username: currUser.username,
+        profileImage: currUser.profileImage,
+      },
+    };
+
+    try {
+      const { data } = await axios.post(`${API_URL}/songs`, songWithUser);
       console.log('Song created:', data);
-      setCurrUser(data);
-      navigate('/');
-      
+      addSong(data);
+      setSong(data);
+      navigate(`/songs`);
+    } catch (error) {
+      console.error('Error creating song:', error);
+    }
+  };
 
   return (
-    <div>
+    <div className='for-all-divs'>
       <h1>Add a song you prefer</h1>
+      <div className='add-song-form'>
       <form onSubmit={handleSubmit}>
         <label>
-          Title:
+          Title: 
           <input type="text" name="title" value={song.title} onChange={handleChange} required />
-        </label>
-        <br />
-        <label>
-          Video Link:
-          <input type="text" name="videoLink" value={song.videoLink} onChange={handleChange} />
         </label>
         <br />
         <label>
@@ -57,13 +85,39 @@ function AddSongsPage( {addSong} ) {
           <input type="text" name="decade" value={song.decade} onChange={handleChange} required />
         </label>
         <br />
+        <label>
+          Image URL:
+          <input type="text" name="image" value={song.image} onChange={handleChange} />
+        </label>
+        <br />
+        <label>
+          Image Attribution:
+          <input type="text" name="attribution" value={song.attribution} onChange={handleChange} />
+        </label>
+        <br />
+        <label>
+          About Artist:
+          <input type="text" name="aboutArtist" value={song.trivia.aboutArtist} onChange={handleTriviaChange} />
+        </label>
+        <br />
+        <label>
+          About Song:
+          <input type="text" name="aboutSong" value={song.trivia.aboutSong} onChange={handleTriviaChange} />
+        </label>
+        <br />
+        <label>
+          Video URL:
+          <input type="text" name="videoUrl" value={song.videoUrl} onChange={handleChange} />
+        </label>
+        <br />
+        <br />
         <button type="submit">Add Song</button>
       </form>
+      </div>
+      <br />
       <Link to="/">Back to All Songs</Link>
     </div>
-    
   );
 }
 
 export default AddSongsPage;
-

@@ -474,3 +474,9 @@ padding: 0;
 .logo{
 	width: 150px;
 }
+
+.add-song-form{
+	margin: 0 auto;
+	width: 70%;
+	text-align: left;
+}
