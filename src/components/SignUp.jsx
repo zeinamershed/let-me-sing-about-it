@@ -5,10 +5,12 @@ import { API_URL } from '../config';
 
 const SignUp = ({ setCurrUser }) => {
   const [username, setUsername] = useState('');
+  const [fullname, setFullname] = useState('');
   const [password, setPassword] = useState('');
   const [image, setImage] = useState('');
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+  
 
   async function handleSignUp(e) {
     e.preventDefault();
@@ -18,8 +20,10 @@ const SignUp = ({ setCurrUser }) => {
       const newUser = {       
         username,
         password,
+        fullname,
         profileImage: image,
-        favorites: []
+        favorites: [],
+        joinedIn: Date.now()
       };
 
       const { data } = await axios.post(`${API_URL}/users`, newUser);
@@ -44,7 +48,18 @@ const SignUp = ({ setCurrUser }) => {
               name="username"
               type="text"
               value={username}
+              placeholder='CouldBePIZZA'
               onChange={(event) => setUsername(event.target.value)}
+            />
+          </label>
+          <label>
+            Fullname:
+            <input
+              name="fullname"
+              type="text"
+              value={fullname}
+              placeholder='Harry Something Potter'
+              onChange={(event) => setFullname(event.target.value)}
             />
           </label>
           <label>
@@ -53,6 +68,7 @@ const SignUp = ({ setCurrUser }) => {
               name="password"
               type="password"
               value={password}
+              placeholder="*******"
               onChange={(event) => setPassword(event.target.value)}
             />
           </label>
@@ -62,6 +78,7 @@ const SignUp = ({ setCurrUser }) => {
               name="image"
               type="text"
               value={image}
+              placeholder=".png/.gif"
               onChange={(event) => setImage(event.target.value)}
             />
           </label>

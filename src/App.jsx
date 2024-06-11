@@ -3,7 +3,7 @@ import HomePage from './pages/HomePage';
 import DecadesPage from './pages/DecadesPage';
 import RandomSongPage from './pages/RandomSongPage';
 import FavoriteSongsPage from './pages/FavoriteSongsPage';
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, ScrollRestoration } from "react-router-dom";
 import About from '../src/pages/AboutPage'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -17,6 +17,7 @@ import NotFound from './pages/NotFound';
 import SignUp from './components/SignUp';
 import LogInn from './components/LogInn';
 import ProfilePage from './pages/ProfilePage';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -83,12 +84,13 @@ function App() {
   return (
     <>
       <Navbar currUser={currUser} setCurrUser={setCurrUser} />
+      <ScrollToTop/>
       <Routes>
         <Route path='/' element={<HomePage currUser={currUser}/>} />
         <Route path='/songs' element={<AllSongsPage songs={songs} addFavorite={addFavorite} removeFavorite={removeFavorite} currUser={currUser} deleteSong={deleteSong}/>} />
         <Route path='/decades' element={<DecadesPage />} />
         <Route path='/random' element={<RandomSongPage />} />
-        <Route path='/favorites' element={<FavoriteSongsPage currUser={currUser} removeFavorite={removeFavorite} />} />
+        <Route path='/favorites' element={<FavoriteSongsPage currUser={currUser} songs={songs} />} />
         <Route path='/about' element={<About />} />
         <Route path='/add' element={<AddSongsPage addSong={addSong} currUser={currUser} />} />
         <Route path="/About" element={<About />} />
@@ -96,7 +98,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/signup" element={<SignUp setCurrUser={setCurrUser} />} />
         <Route path="/login" element={<LogInn setCurrUser={setCurrUser} />} />
-        <Route path="/profile" element={<ProfilePage currUser={currUser} setCurrUser={setCurrUser} />} />
+        <Route path="/profile" element={<ProfilePage currUser={currUser} setCurrUser={setCurrUser} songs={songs}/>} />
       </Routes>
 
       <br />

@@ -5,12 +5,15 @@ import {
 	faHouse,
 	faArrowRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../assets/images/logo.png';
 
 const Navbar = ({ currUser, setCurrUser }) => {
+	const nav = useNavigate()
+
 	function handleLogout() {
 		setCurrUser(null);
+		nav('/');
 	}
 	return (
 		<nav className="nav">
@@ -18,10 +21,15 @@ const Navbar = ({ currUser, setCurrUser }) => {
 				<NavLink to="/">
 					<FontAwesomeIcon icon={faHouse} /> <span>Home Page</span>
 				</NavLink>
+				<div></div>
+				<div></div>
 				<img className="logo" src={logo} alt='logo-let-me-sing-about-it' />
+				<div></div>
+				<div></div>
 				{currUser ? (
 					<span>
-						<button className="logout-btn" onClick={handleLogout}><FontAwesomeIcon icon={faArrowRightFromBracket} />Logout</button>
+						<NavLink to="/profile"> <span className="logout-btn"><FontAwesomeIcon icon={faUser} /> {currUser.username}</span></NavLink>
+						<button className="logout-btn" onClick={handleLogout}><FontAwesomeIcon icon={faArrowRightFromBracket} />Logout</button>						
 					</span>
 				) : (
 					<span>

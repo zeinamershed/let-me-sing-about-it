@@ -322,6 +322,7 @@
 
 .all-songs-info-container {
 	border-bottom: 1px solid grey;
+	color: #333;
 }
 
 .for-all-songs-btn {
@@ -370,6 +371,7 @@ padding: 3px;
 	flex-direction: column;
 	width: fit-content;
 	margin: 1vh;
+	text-align: center;
 }
 
 .sign-up-form button {
@@ -479,4 +481,49 @@ padding: 3px;
 	margin: 0 auto;
 	width: 70%;
 	text-align: left;
+}
+
+/*user profile*/
+
+.user-profile-page{
+	display: flex;
+	margin: 8vh auto;
+	justify-content: space-between;
+}
+.user-profile-1{
+	width: 40%;;
+}
+
+.user-profile-1 img{
+width: 250px;
+height: 250px;
+border:1px solid #712285;
+}
+
+.user-info{
+	width: 100%;
+	text-align: left;
+	margin-left: 5vw;
+}
+
+.favorite-song-user{
+	border:1px dashed #303169;
+	padding:0.5vh 1vw;
+	margin: 1vh 0;
+}
+
+.fav-songs-specific{
+	display:flex;
+	justify-content: space-around;
+	width: 100%;
+	align-items: center;
+}
+
+.fav-songs-specific div{
+	width: 25%;
+}
+
+.logo-favs{
+	height:100px;
+	
 }

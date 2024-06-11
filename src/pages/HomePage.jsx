@@ -32,7 +32,7 @@ const HomePage = ({currUser}) => {
 				{currUser?(<Link to='/add'>
 					<button className="btn-add-songs">
 						<h2>Add your owns</h2>
-						<p></p>
+						<p>Follow the call of the disco ball</p>
 					</button>
 				</Link>):(<span> </span>)}
 				
