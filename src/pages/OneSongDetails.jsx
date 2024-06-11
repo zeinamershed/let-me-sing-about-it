@@ -1,7 +1,12 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faCircleInfo, faTrash, faPenToSquare} from "@fortawesome/free-solid-svg-icons"
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 
-const OneSongDetails = ({ songs }) => {
+
+const OneSongDetails = ({ songs, addFavorite, removeFavorite, currUser }) => {
 	const { songId } = useParams();
 	const filteredSong = songs.find((song) => song.id === songId);
 
@@ -11,20 +16,35 @@ const OneSongDetails = ({ songs }) => {
 
 	return (
 		<div className="for-all-divs">
-			<div className='one-song-detail'>
+			<div className="one-song-detail">
 				<img
 					src={filteredSong.image}
 					alt={filteredSong.song}
 				/>
 			</div>
-			<h2>{filteredSong.song}</h2>
+			<h2>{filteredSong.song} {currUser && currUser.favorites.includes(oneSong.id) ? (
+              <button onClick={() => removeFavorite(filteredSong.id)}className="for-all-songs-btn"><FontAwesomeIcon icon={solidHeart} /></button>
+            ) : (
+              <button onClick={() => addFavorite(filteredSong.id)} className="for-all-songs-btn"><FontAwesomeIcon icon={regularHeart} /></button>
+            )}</h2>
 			<h4>
-				{filteredSong.artist}, {filteredSong.album}, {filteredSong.genre}
+				{filteredSong.artist}, {filteredSong.album}, {filteredSong.genre},{' '}
+				{filteredSong.decade}
 			</h4>
-			<p>{filteredSong.decade}</p>
-			<h4>Trivia</h4>
-			<p>About the artist:{filteredSong.trivia.aboutArtist}</p>
-			<p>About the song:{filteredSong.trivia.aboutSong}</p>
+			<div className="trivia-box">
+				<h4>Trivia</h4>
+				<div className='trivia-box-inside'>
+				<div className="trivia-section">
+					<p className="trivia-title">About the Artist:</p>
+					<p className="trivia-content">{filteredSong.trivia.aboutArtist}</p>
+				</div>
+				<div className="vl"></div>
+				<div className="trivia-section">
+					<p className="trivia-title">About the Song:</p>
+					<p className="trivia-content">{filteredSong.trivia.aboutSong}</p>
+				</div>
+				</div>
+			</div>
 			<br />
 			<hr className="hr-random" />
 

@@ -298,13 +298,13 @@
 }
 
 .add-input {
-  width: 40%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: none;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border-radius: 5px;
+	width: 40%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: none;
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+	border-radius: 5px;
 }
 .button-form {
 	background: #303169;
@@ -314,9 +314,8 @@
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+}
 
-  }
-  
 .button-form:hover {
 	background: #423d8b;
 }
@@ -328,10 +327,18 @@
 .for-all-songs-btn {
 	background: none;
 	color: black;
+	border: none;
+	margin: 0;
 }
 
 .for-all-songs-btn:hover {
 	color: rgba(79, 12, 134, 1);
+	border: none;
+}
+
+.for-all-songs-btn:focus,
+.for-all-songs-btn:focus-visible {
+  outline: none;
 }
 
 .links-songs {
@@ -348,20 +355,20 @@
 	object-fit: cover;
 }
 
-.sign-up-form{
-	display:flex;
+.sign-up-form {
+	display: flex;
 	flex-direction: column;
 	width: fit-content;
 	margin: 0 auto;
 }
-.sign-up-form input{
-	display:flex;
+.sign-up-form input {
+	display: flex;
 	flex-direction: column;
 	width: fit-content;
-	margin:1vh
+	margin: 1vh;
 }
 
-.sign-up-form button{	
+.sign-up-form button {
 	font-size: 1.3em;
 	color: aliceblue;
 	background: rgb(79, 12, 134);
@@ -386,7 +393,7 @@
 	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
 }
 
-.logout-btn{
+.logout-btn {
 	background: none;
 	color: aliceblue;
 	transition: transform 0.3s ease;
@@ -395,8 +402,61 @@
 	border: none;
 }
 
-.logout-btn:hover{
+.logout-btn:hover {
 	transform: translateY(-5px);
 	color: #712285;
 	border: none;
 }
+
+.trivia-box {
+	border: 2px solid #712285;
+	border-radius: 10px;
+	padding: 0 2vw 1vh;
+	margin: 5vh auto;
+	width: 80%;
+	background-color: #f9f6fc;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.trivia-box h4 {
+	text-align: center;
+	color: #712285;
+	font-size: 1.4em;
+	margin-bottom: 20px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-top: 5px;
+	text-decoration:underline;
+}
+
+.trivia-section {
+	margin: 0 auto 20px;
+}
+.trivia-box-inside{
+	width: 100%;
+	display:flex;
+	justify-content: space-evenly;
+}
+.trivia-title {
+	font-weight: bold;
+	color: #712285;
+	font-size: 1.2em;
+	margin-bottom: 5px;
+}
+
+.trivia-content {
+	font-size: 1em;
+	color: #333;
+	line-height: 1.5;
+	background: #e8dff1;
+	padding: 10px;
+	border-radius: 5px;
+	margin: 10px;
+}
+
+.vl {
+	border-left: 2px solid #712285;
+	height: 26vh;
+	margin: 0 2vw 2vh;
+  }
+
