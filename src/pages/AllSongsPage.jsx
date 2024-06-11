@@ -56,16 +56,21 @@ const AllSongsPage = ({
 										<FontAwesomeIcon icon={regularHeart} />
 									</button>
 								)}
-
-								<button className="for-all-songs-btn">
-									<FontAwesomeIcon icon={faPenToSquare} />
-								</button>
-								<button
-									onClick={() => deleteSong(oneSong.id)}
-									className="for-all-songs-btn"
-								>
-									<FontAwesomeIcon icon={faTrash} />
-								</button>
+								{currUser.id === oneSong.uploadedBy.userId ? (
+									<div>
+										<button className="for-all-songs-btn">
+											<FontAwesomeIcon icon={faPenToSquare} />
+										</button>
+										<button
+											onClick={() => deleteSong()}
+											className="for-all-songs-btn"
+										>
+											<FontAwesomeIcon icon={faTrash} />
+										</button>
+									</div>
+								) : (
+									<span></span>
+								)}
 							</div>
 						)}
 					</div>

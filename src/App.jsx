@@ -92,7 +92,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/add' element={<AddSongsPage addSong={addSong} currUser={currUser} />} />
         <Route path="/About" element={<About />} />
-        <Route path="/songs/:songId" element={<OneSongDetails songs={songs} addFavorite={addFavorite} removeFavorite={removeFavorite} currUser={currUser} />} />
+        <Route path="/songs/:songId" element={<OneSongDetails songs={songs} addFavorite={addFavorite} removeFavorite={removeFavorite} currUser={currUser} deleteSong={deleteSong}/>} />
         <Route path="*" element={<NotFound />} />
         <Route path="/signup" element={<SignUp setCurrUser={setCurrUser} />} />
         <Route path="/login" element={<LogInn setCurrUser={setCurrUser} />} />

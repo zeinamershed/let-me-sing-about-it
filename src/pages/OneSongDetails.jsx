@@ -1,17 +1,27 @@
 import React from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {faCircleInfo, faTrash, faPenToSquare} from "@fortawesome/free-solid-svg-icons"
+import { Link, useParams , useNavigate  } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faCircleInfo,
+	faTrash,
+	faPenToSquare,
+} from '@fortawesome/free-solid-svg-icons';
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 
-
-const OneSongDetails = ({ songs, addFavorite, removeFavorite, currUser }) => {
+const OneSongDetails = ({ songs, addFavorite, removeFavorite, currUser, deleteSong }) => {
 	const { songId } = useParams();
+	const nav = useNavigate();
 	const filteredSong = songs.find((song) => song.id === songId);
+	const { uploadedBy } = filteredSong;
 
 	if (!filteredSong) {
 		return <p>Song not found!</p>;
+	}
+
+	function handleDelete(){
+		deleteSong(filteredSong.id)
+		nav(`/songs`)
 	}
 
 	return (
@@ -23,29 +33,61 @@ const OneSongDetails = ({ songs, addFavorite, removeFavorite, currUser }) => {
 				/>
 				{/* <p className='small-text-license'>{filteredSong.attribution}</p> */}
 			</div>
-			<div className='one-song-info'> 
-			<h2>{filteredSong.title} {currUser && currUser.favorites.includes(filteredSong.id) ? (
-              <button onClick={() => removeFavorite(filteredSong.id)}className="for-all-songs-btn"><FontAwesomeIcon icon={solidHeart} /></button>
-            ) : (
-              <button onClick={() => addFavorite(filteredSong.id)} className="for-all-songs-btn"><FontAwesomeIcon icon={regularHeart} /></button>
-            )}</h2>
-			<h4>
-				{filteredSong.artist}, {filteredSong.album}, {filteredSong.genre},{' '}
-				{filteredSong.decade}
-			</h4>
+			<div className="one-song-info">
+				<h2>
+					{filteredSong.title}{' '}
+					{currUser && (
+						<div>
+							{currUser.favorites.includes(filteredSong.id) ? (
+								<button
+									onClick={() => removeFavorite(filteredSong.id)}
+									className="for-all-songs-btn"
+								>
+									<FontAwesomeIcon icon={solidHeart} />
+								</button>
+							) : (
+								<button
+									onClick={() => addFavorite(filteredSong.id)}
+									className="for-all-songs-btn"
+								>
+									<FontAwesomeIcon icon={regularHeart} />
+								</button>
+							)}
+							{currUser.id === uploadedBy.userId ? (
+								<div>
+									<button className="for-all-songs-btn">
+										<FontAwesomeIcon icon={faPenToSquare} />
+									</button>
+									<button
+										onClick={() => handleDelete()}
+										className="for-all-songs-btn"
+									>
+										<FontAwesomeIcon icon={faTrash} />
+									</button>
+								</div>
+							) : (
+								<span></span>
+							)}
+						</div>
+					)}
+				</h2>
+				<h4>
+					{filteredSong.artist}, {filteredSong.album}, {filteredSong.genre},{' '}
+					{filteredSong.decade}
+				</h4>
 			</div>
 			<div className="trivia-box">
 				<h4>Trivia</h4>
-				<div className='trivia-box-inside'>
-				<div className="trivia-section">
-					<p className="trivia-title">About the Artist:</p>
-					<p className="trivia-content">{filteredSong.trivia.aboutArtist}</p>
-				</div>
-				<div className="vl"></div>
-				<div className="trivia-section">
-					<p className="trivia-title">About the Song:</p>
-					<p className="trivia-content">{filteredSong.trivia.aboutSong}</p>
-				</div>
+				<div className="trivia-box-inside">
+					<div className="trivia-section">
+						<p className="trivia-title">About the Artist:</p>
+						<p className="trivia-content">{filteredSong.trivia.aboutArtist}</p>
+					</div>
+					<div className="vl"></div>
+					<div className="trivia-section">
+						<p className="trivia-title">About the Song:</p>
+						<p className="trivia-content">{filteredSong.trivia.aboutSong}</p>
+					</div>
 				</div>
 			</div>
 			<br />
