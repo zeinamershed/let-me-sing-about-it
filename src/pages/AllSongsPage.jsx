@@ -26,6 +26,11 @@ const AllSongsPage = ({ songs, addFavorite, removeFavorite, currUser }) => {
 								<p>
 									<strong>Decade:</strong> {oneSong.decade}
 								</p>
+								{oneSong.videoLink && (
+									<p>
+									<a href={oneSong.videoLink} target="_blank" rel="noopener noreferrer"></a>
+									</p>
+								)}
 							</div>
 						</div>
  
