@@ -472,7 +472,7 @@ padding: 3px;
 }
 
 .logo{
-	width: 150px;
+	max-height:10vh;
 }
 
 .add-song-form{
