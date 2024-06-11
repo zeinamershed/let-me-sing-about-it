@@ -30,6 +30,7 @@ const SignUp = ({ setCurrUser }) => {
       console.error('Error creating user:', error);
       setError('An error occurred while creating the user. Please try again later.');
     }
+    
   }
 
   return (

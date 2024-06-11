@@ -1,11 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
+import { API_URL } from '../config';
 
 function AddSongsPage( {addSong} ) {
   
   const [song, setSong] = useState({ title: '', artist: '', genre: '', decade: '' });
-  
+  const navigate = useNavigate();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setSong((prevSong) => ({
@@ -19,6 +21,12 @@ function AddSongsPage( {addSong} ) {
     addSong(song);
     setSong({ title: '', artist: '', genre: '', decade: '' });
   };
+ 
+  const { data } =  axios.post(`${API_URL}/songs`, newSong);
+      console.log('Song created:', data);
+      setCurrUser(data);
+      navigate('/');
+      
 
   return (
     <div>
@@ -27,6 +35,11 @@ function AddSongsPage( {addSong} ) {
         <label>
           Title:
           <input type="text" name="title" value={song.title} onChange={handleChange} required />
+        </label>
+        <br />
+        <label>
+          Video Link:
+          <input type="text" name="videoLink" value={song.videoLink} onChange={handleChange} />
         </label>
         <br />
         <label>
