@@ -19,6 +19,7 @@ const SignUp = ({ setCurrUser }) => {
         username,
         password,
         profileImage: image,
+        favorites: []
       };
 
       const { data } = await axios.post(`${API_URL}/users`, newUser);
@@ -63,6 +64,7 @@ const SignUp = ({ setCurrUser }) => {
               onChange={(event) => setImage(event.target.value)}
             />
           </label>
+
           {error && <p className="error-message">{error}</p>}
           <button type="submit">Sign Up!</button>
         </form>
