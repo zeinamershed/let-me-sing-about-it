@@ -53,20 +53,8 @@ function AddSongsPage({ addSong, currUser }) {
       const { data } = await axios.post(`${API_URL}/songs`, songWithUser);
       console.log('Song created:', data);
       addSong(data);
-      setSong({
-        title: '',
-        artist: '',
-        genre: '',
-        decade: '',
-        image: '',
-        attribution: '',
-        trivia: {
-          aboutArtist: '',
-          aboutSong: '',
-        },
-        videoUrl: '',
-      });
-      navigate('/');
+      setSong(data);
+      navigate(`/songs`);
     } catch (error) {
       console.error('Error creating song:', error);
     }

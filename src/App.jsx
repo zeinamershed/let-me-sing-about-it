@@ -46,7 +46,7 @@ function App() {
 
       await axios.patch(`${API_URL}/users/${currUser.id}`, { favorites: updatedFavorites });
       setCurrUser(updatedUser);
-    } catch (error) {
+      } catch (error) {
       console.error('Error adding favorite:', error);
     }
   };
@@ -65,13 +65,8 @@ function App() {
     }
   };
 
-  const addSong = async (newSong) => {
-    try {
-      const { data } = await axios.post(`${API_URL}/songs`, newSong);
-      setSongs((prevSongs) => [...prevSongs, data]);
-    } catch (error) {
-      console.log("Error adding song", error);
-    }
+  const addSong = (newSong) => {
+    setSongs((prevSongs) => [...prevSongs, newSong]);
   };
 
   return (
