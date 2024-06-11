@@ -471,6 +471,10 @@ padding: 3px;
 	width: 80%;
 }
 
+.logo{
+	width: 150px;
+}
+
 .add-song-form{
 	margin: 0 auto;
 	width: 70%;
