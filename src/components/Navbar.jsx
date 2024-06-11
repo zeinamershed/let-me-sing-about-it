@@ -1,9 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-	faFile,
+	faUser,
 	faHouse,
-	faCircleInfo,
+	faArrowRightFromBracket,
 } from '@fortawesome/free-solid-svg-icons';
 import { Link, NavLink } from 'react-router-dom';
 
@@ -20,10 +20,11 @@ const Navbar = ({ currUser, setCurrUser }) => {
 				<h1>Let Me Sing About It</h1>
 				{currUser ? (
 					<span>
-						<button onClick={handleLogout}>Logout</button>
+						<button className="logout-btn" onClick={handleLogout}><FontAwesomeIcon icon={faArrowRightFromBracket} />Logout</button>
 					</span>
 				) : (
 					<span>
+            <FontAwesomeIcon icon={faUser} /><span> </span>
 						<NavLink to="/signup">Sign Up</NavLink> /{' '}
 						<NavLink to="/login">Login</NavLink>
 					</span>

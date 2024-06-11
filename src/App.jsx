@@ -16,10 +16,11 @@ import OneSongDetails from './pages/OneSongDetails';
 import NotFound from './pages/NotFound';
 import SignUp from './components/SignUp';
 import LogInn from './components/LogInn';
+import ProfilePage from './pages/ProfilePage';
 
 function App() {
   const [songs, setSongs] = useState([]);
-  const [currUser, setCurrUser] = useState()
+  const [currUser, setCurrUser] = useState();
 
   useEffect(() => {
     const fetchSongs = async () => {
@@ -35,41 +36,57 @@ function App() {
     fetchSongs();
   }, []);
 
- /*  function handleDeleteUnit(unitId) {
-    const filteredRentals = rentals.filter((rental) => {
-      if (rental.id !== unitId) {
-        return true;
-      }
-    });
-    setRentals(filteredRentals);
-  }
-  function handleAddToFavourites(unit) {
-    setFavRentals([...favRentals, unit]);
-  } */
+  const addFavorite = async (songId) => {
+    if (!currUser) return;
 
-	return (
-		<>
-    <Navbar currUser={currUser} setCurrUser={setCurrUser}/>
-			<Routes>
-        <Route path='/' element={<HomePage />}/>
-        <Route path='/songs' element={<AllSongsPage songs={songs}/>}/>
-				<Route path='/decades' element={<DecadesPage/>}/>
-        <Route path='/random' element={<RandomSongPage/>}/>
-        <Route path='/favorites' element={<FavoriteSongsPage/>}/>
+    try {
+      const updatedFavorites = [...currUser.favorites, songId];
+      const updatedUser = { ...currUser, favorites: updatedFavorites };
+
+      await axios.patch(`${API_URL}/users/${currUser.id}`, { favorites: updatedFavorites });
+      setCurrUser(updatedUser);
+    } catch (error) {
+      console.error('Error adding favorite:', error);
+    }
+  };
+
+  const removeFavorite = async (songId) => {
+    if (!currUser) return;
+
+    try {
+      const updatedFavorites = currUser.favorites.filter((id) => id !== songId);
+      const updatedUser = { ...currUser, favorites: updatedFavorites };
+
+      await axios.patch(`${API_URL}/users/${currUser.id}`, { favorites: updatedFavorites });
+      setCurrUser(updatedUser);
+    } catch (error) {
+      console.error('Error removing favorite:', error);
+    }
+  };
+
+  return (
+    <>
+      <Navbar currUser={currUser} setCurrUser={setCurrUser} />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/songs' element={<AllSongsPage songs={songs} addFavorite={addFavorite} removeFavorite={removeFavorite} currUser={currUser} />} />
+        <Route path='/decades' element={<DecadesPage />} />
+        <Route path='/random' element={<RandomSongPage />} />
+        <Route path='/favorites' element={<FavoriteSongsPage currUser={currUser} removeFavorite={removeFavorite} />} />
         <Route path='/about' element={<About />} />
         <Route path='/add' element={<AddSongsPage />} />
         <Route path="/About" element={<About />} />
-        <Route path="/songs/:songId" element={<OneSongDetails songs={songs}/>}/>
+        <Route path="/songs/:songId" element={<OneSongDetails songs={songs} addFavorite={addFavorite} removeFavorite={removeFavorite} currUser={currUser} />} />
         <Route path="*" element={<NotFound />} />
-        <Route path="/signup" element={<SignUp setCurrUser={setCurrUser}/>}/>
-        <Route path="/login" element={<LogInn setCurrUser={setCurrUser}/>}/>
-			</Routes>
-      
+        <Route path="/signup" element={<SignUp setCurrUser={setCurrUser} />} />
+        <Route path="/login" element={<LogInn setCurrUser={setCurrUser} />} />
+        <Route path="/profile" element={<ProfilePage currUser={currUser} setCurrUser={setCurrUser} />} />
+      </Routes>
+
       <br />
       <Footer />
-		</>
-	);
- 
+    </>
+  );
 }
 
 export default App;

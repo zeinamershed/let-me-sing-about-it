@@ -393,3 +393,17 @@
 	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
 }
 
+.logout-btn{
+	background: none;
+	color: aliceblue;
+	transition: transform 0.3s ease;
+	overflow: hidden;
+	font-size: 1.2em;
+	border: none;
+}
+
+.logout-btn:hover{
+	transform: translateY(-5px);
+	color: #712285;
+	border: none;
+}
