@@ -62,7 +62,7 @@ const AllSongsPage = ({
 											<FontAwesomeIcon icon={faPenToSquare} />
 										</button>
 										<button
-											onClick={() => deleteSong()}
+											onClick={() => deleteSong(oneSong.id)}
 											className="for-all-songs-btn"
 										>
 											<FontAwesomeIcon icon={faTrash} />
