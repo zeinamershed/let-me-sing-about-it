@@ -49,7 +49,7 @@ function App() {
 
 	return (
 		<>
-    <Navbar />
+    <Navbar currUser={currUser} setCurrUser={setCurrUser}/>
 			<Routes>
         <Route path='/' element={<HomePage />}/>
         <Route path='/songs' element={<AllSongsPage songs={songs}/>}/>

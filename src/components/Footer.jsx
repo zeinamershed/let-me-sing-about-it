@@ -1,4 +1,11 @@
 import githublogo from '../assets/images/githublogo.jpg';
+import { Link, NavLink } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+	faFile,
+	faHouse,
+	faCircleInfo,
+} from '@fortawesome/free-solid-svg-icons';
 
 const Footer = () => {
     return (
@@ -9,6 +16,7 @@ const Footer = () => {
          
          <h5>GitHub Repositories</h5>
         </a>
+        <NavLink to="/About"><FontAwesomeIcon icon={faFile} /> <span>About Us</span></NavLink>
       </div>
     )
   }

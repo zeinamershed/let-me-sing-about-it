@@ -297,7 +297,7 @@
 	justify-content: center;
 }
 
-input[type="text"] {
+.add-input {
   width: 40%;
   padding: 10px;
   margin-bottom: 15px;
@@ -392,3 +392,4 @@ input[type="text"] {
 	transform: translateY(-5px);
 	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
 }
+

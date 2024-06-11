@@ -49,7 +49,7 @@ function AddSongsPage() {
         <div>
           <label>
              Title:
-            <input
+            <input className='add-input'
               type="text"
               name="title"
               value={song.title}
@@ -61,7 +61,7 @@ function AddSongsPage() {
         <div>
           <label>
             Artist:
-            <input
+            <input className='add-input'
               type="text"
               name="artist"
               value={song.artist}
@@ -73,7 +73,7 @@ function AddSongsPage() {
         <div>
           <label>
             Link:
-            <input
+            <input className='add-input'
               type="text"
               name="link"
               value={song.link}
