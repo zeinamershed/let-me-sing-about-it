@@ -2,103 +2,53 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
 
-function AddSongsPage() {
+function AddSongsPage( {addSong} ) {
   
-  const [song, setSong] = useState({ title: '', artist: '', link: '' });
-  const [songs, setSongs] = useState([]);
-  const [editIndex, setEditIndex] = useState(null);
-
- 
-  const handleInputChange = (e) => {
+  const [song, setSong] = useState({ title: '', artist: '', genre: '', decade: '' });
+  
+  const handleChange = (e) => {
     const { name, value } = e.target;
-    setSong({ ...song, [name]: value });
+    setSong((prevSong) => ({
+      ...prevSong,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (song.title && song.artist && song.link) {
-      if (editIndex !== null) {
-     
-        const updatedSongs = songs.map((s, index) =>
-          index === editIndex ? song : s
-        );
-        setSongs(updatedSongs);
-        setEditIndex(null); 
-      } else {
-        
-        setSongs([...songs, song]);
-      }
-      setSong({ title: '', artist: '', link: '' }); 
-    }
-  };
-
-  const handleEdit = (index) => {
-    setSong(songs[index]);
-    setEditIndex(index);
-  };
-
-  const handleDelete = (index) => {
-    const updatedSongs = songs.filter((s, i) => i !== index);
-    setSongs(updatedSongs);
+    addSong(song);
+    setSong({ title: '', artist: '', genre: '', decade: '' });
   };
 
   return (
     <div>
-      <h1>Add a song which you prefer</h1>
-      <form onSubmit={handleSubmit} className='add-form'>
-        <div>
-          <label>
-             Title:
-            <input
-              type="text"
-              name="title"
-              value={song.title}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Artist:
-            <input
-              type="text"
-              name="artist"
-              value={song.artist}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-        </div>
-        <div>
-          <label>
-            Link:
-            <input
-              type="text"
-              name="link"
-              value={song.link}
-              onChange={handleInputChange}
-              required
-            />
-          </label>
-        </div>
-        <button className='button-form' type="submit">{editIndex !== null ? 'Update Song' : 'Add Song'}</button>
+      <h1>Add a song you prefer</h1>
+      <form onSubmit={handleSubmit}>
+        <label>
+          Title:
+          <input type="text" name="title" value={song.title} onChange={handleChange} required />
+        </label>
+        <br />
+        <label>
+          Artist:
+          <input type="text" name="artist" value={song.artist} onChange={handleChange} required />
+        </label>
+        <br />
+        <label>
+          Genre:
+          <input type="text" name="genre" value={song.genre} onChange={handleChange} required />
+        </label>
+        <br />
+        <label>
+          Decade:
+          <input type="text" name="decade" value={song.decade} onChange={handleChange} required />
+        </label>
+        <br />
+        <button type="submit">Add Song</button>
       </form>
-      
-      <h2>Song List</h2>
-      <div className='add-list'>
-      <ul>
-        {songs.map((s, index) => (
-          <li key={index}>
-            {s.title} by {s.artist}{' '}
-            <a href={s.link} target="_blank" rel="noopener noreferrer">Listen</a>{' '}
-            <button className='button-form' onClick={() => handleEdit(index)}>Edit</button>
-            <button className='button-form' onClick={() => handleDelete(index)}>Delete</button>
-          </li>
-        ))}
-      </ul>
-      </div>
+      <Link to="/">Back to All Songs</Link>
     </div>
+    
   );
 }
 

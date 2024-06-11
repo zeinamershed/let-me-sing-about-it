@@ -321,13 +321,6 @@ input[type="text"] {
 	background: #423d8b;
 }
 
-.add-list {
-	display: inline-block;
-	
-	justify-content: space-between;
-	border: 5px solid red;
-}
-
 .all-songs-info-container {
 	border-bottom: 1px solid grey;
 }
