@@ -101,6 +101,7 @@
 
 .footer a {
 	display: flex;
+	color: #333;
 }
 /* About page */
 .aboutUs {

@@ -1,13 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
-import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 
 const ProfilePage = ({ currUser, songs, handleDelete }) => {
 	if (!currUser) {
-		return <p>User not found</p>;
+		return (
+			<div className="for-all-divs">
+				<p>User not found</p>
+				<br />
+				<br />
+				<NavLink to="/signup">Sign Up</NavLink> /{' '}
+				<NavLink to="/login">Login</NavLink>
+			</div>
+		);
 	}
 
 	const joinedDate = new Date(currUser.joinedIn);
@@ -65,17 +71,17 @@ const ProfilePage = ({ currUser, songs, handleDelete }) => {
 											</div>
 										</Link>
 										<div>
-										<Link to={`/edit-song/${song.id}`}>
-											<button className="for-all-songs-btn">
-												<FontAwesomeIcon icon={faPenToSquare} />
+											<Link to={`/edit-song/${song.id}`}>
+												<button className="for-all-songs-btn">
+													<FontAwesomeIcon icon={faPenToSquare} />
+												</button>
+											</Link>
+											<button
+												onClick={() => handleDelete()}
+												className="for-all-songs-btn"
+											>
+												<FontAwesomeIcon icon={faTrash} />
 											</button>
-										</Link>
-										<button
-											onClick={() => handleDelete()}
-											className="for-all-songs-btn"
-										>
-											<FontAwesomeIcon icon={faTrash} />
-										</button>
 										</div>
 									</div>
 								))
