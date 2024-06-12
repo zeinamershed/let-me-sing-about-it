@@ -24,10 +24,14 @@ const OneSongDetails = ({ songs, addFavorite, removeFavorite, currUser, deleteSo
 		nav(`/songs`)
 	}
 
+	function handleImageClick() {
+		window.alert("PREPARE TO BE RICKROLLED");
+	}
+
 	return (
 		<div className="for-all-divs">
 			<div className="one-song-detail">
-			<Link to={"/songs/1"}>
+			<Link to={"/songs/1"} onClick={handleImageClick}>
 				<img
 					src={filteredSong.image}
 					alt={filteredSong.title}
