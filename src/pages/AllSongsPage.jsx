@@ -11,6 +11,7 @@ const AllSongsPage = ({
 	removeFavorite,
 	currUser,
 	deleteSong,
+	updatedSong,
 }) => {
 	return (
 		<div className="for-all-divs">
@@ -58,9 +59,12 @@ const AllSongsPage = ({
 								)}
 								{currUser.id === oneSong.uploadedBy.userId ? (
 									<div>
-										<button className="for-all-songs-btn">
-											<FontAwesomeIcon icon={faPenToSquare} />
-										</button>
+										<Link to={`/edit-song/${oneSong.id}`} >
+											<button onClick={() => updateSongSong()} className="for-all-songs-btn" ><FontAwesomeIcon icon={faPenToSquare} />
+											</button>
+										</Link>
+
+
 										<button
 											onClick={() => deleteSong()}
 											className="for-all-songs-btn"
