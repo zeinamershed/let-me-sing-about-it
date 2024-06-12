@@ -291,35 +291,6 @@
 	background-position: right center;
 }
 
-/* Add page */
-.add-form {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
-
-.add-input {
-	width: 40%;
-	padding: 10px;
-	margin-bottom: 15px;
-	border: none;
-	background: rgba(255, 255, 255, 0.1);
-	color: #fff;
-	border-radius: 5px;
-}
-.button-form {
-	background: #303169;
-	color: #fff;
-	margin-left: 40%;
-	margin-right: 40%;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
-.button-form:hover {
-	background: #423d8b;
-}
 
 .all-songs-info-container {
 	border-bottom: 1px solid grey;
@@ -484,8 +455,9 @@ padding: 3px;
 	text-align: left;
 }
 
-/*user profile*/
 
+
+/*user profile*/
 .user-profile-page{
 	display: flex;
 	margin: 3vh auto;
@@ -552,3 +524,87 @@ width: 100%;
 .logo-favs{
 	height:100px;	
 }
+
+
+/* Add page */
+.add-song-page {
+	width: 70%;
+	margin: 0 auto;
+	background-color: aliceblue;
+	padding: 2vh 2vw;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	color: black;
+	text-align: left;
+  }
+  
+  .add-song-page h1 {
+	text-align: center;
+	color: #712285;
+	margin-bottom: 2vh;
+  }
+  
+  .add-song-form label {
+	display: block;
+	margin-bottom: 1em;
+	color: #303169;
+  }
+  
+  .add-song-form input,
+  .add-song-form select {
+	width: 100%;
+	padding: 10px;
+	margin-top: 5px;
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 0.432);
+	color: #303169;
+	font-size: 1em;
+  }
+  
+  .add-song-form button {
+	display: block;
+	width: fit-content;
+	margin: 2vh auto;
+	padding: 10px 20px;
+	background: rgb(79, 12, 134);
+	background: linear-gradient(
+	  50deg,
+	  rgba(79, 12, 134, 1) 17%,
+	  rgba(121, 14, 137, 1) 43%,
+	  rgba(0, 212, 255, 1) 100%
+	);
+	color: aliceblue;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 1.2em;
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .add-song-form button:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  .add-song-page a {
+	display: block;
+	text-align: center;
+	margin-top: 2vh;
+	color: rgba(79, 12, 134, 1);
+	text-decoration: none;
+	transition: color 0.3s ease;
+  }
+  
+  .add-song-page a:hover {
+	color: rgba(121, 14, 137, 1);
+  }
+  
+  .add-song-form textarea {
+	width: 100%;
+	padding: 10px;
+	margin-top: 5px;
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 0.1);
+	color: #303169;
+	font-size: 1em;
+  }
