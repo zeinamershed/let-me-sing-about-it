@@ -15,6 +15,7 @@ const RandomSongPage = () => {
 				setTimeout(() => {
 					setRandomSong(data[randomIndex]);
 				}, 2000);
+				
 			} catch (error) {
 				console.log(error);
 			}
