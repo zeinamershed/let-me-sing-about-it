@@ -21,6 +21,7 @@ const RandomSongPage = () => {
                         setShowConfetti(false);
                     }, 10000);
 				}, 2000);
+				
 			} catch (error) {
 				console.log(error);
 			}

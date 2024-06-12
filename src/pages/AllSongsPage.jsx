@@ -79,6 +79,10 @@ const AllSongsPage = ({
 						)}
 					</div>
 				))}
+				<br />
+				<Link to="/">
+						<button className="random-btn">Back</button>
+					</Link>
 		</div>
 	);
 };

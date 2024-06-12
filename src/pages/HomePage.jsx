@@ -13,7 +13,7 @@ const HomePage = ({currUser}) => {
 				</Link>
 				<Link to='/decades'>
 					<button className="btn-all-decades">
-						<h2>By Decade</h2>
+						<h2>Songs by Decade</h2>
 						<p>Because sometimes, you just want THAT vibe!</p>
 					</button>
 				</Link>
@@ -31,11 +31,11 @@ const HomePage = ({currUser}) => {
 				</Link>
 				{currUser?(<Link to='/add'>
 					<button className="btn-add-songs">
-						<h2>Add your owns</h2>
+						<h2>Add Your Own Songs</h2>
 						<p>Follow the call of the disco ball</p>
 					</button>
 				</Link>):(<span> </span>)}
-				
+							
 			</div>
 		</div>
 	);
