@@ -40,7 +40,7 @@ const AllSongsPage = ({
 							</div>
 						</Link>
 						{currUser && (
-							<div>
+							<div className='h2-one-song'>
 								{currUser.favorites.includes(oneSong.id) ? (
 									<button
 										onClick={() => removeFavorite(oneSong.id)}

@@ -41,7 +41,7 @@ const OneSongDetails = ({
                 <Tooltip id="image-tooltip" place="bottom" effect="float" />
             </div>
 			<div className="one-song-info">
-				<h2>
+				<h2 className='h2-one-song'>
 					{filteredSong.title}{' '}
 					{currUser && (
 						<div>
@@ -60,7 +60,10 @@ const OneSongDetails = ({
 									<FontAwesomeIcon icon={regularHeart} />
 								</button>
 							)}
-							{currUser.id === uploadedBy.userId ? (
+							
+						</div>
+					)}
+					{currUser.id === uploadedBy.userId ? (
 								<div>
 									<Link to={`/edit-song/${filteredSong.id}`}>
 										<button className="for-all-songs-btn">
@@ -77,8 +80,6 @@ const OneSongDetails = ({
 							) : (
 								<span></span>
 							)}
-						</div>
-					)}
 				</h2>
 				<h4>
 					{filteredSong.artist}, {filteredSong.album}, {filteredSong.genre},{' '}
