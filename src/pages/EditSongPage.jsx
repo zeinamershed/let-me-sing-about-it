@@ -8,7 +8,7 @@ function EditSongPage({ songs, updateSong }) {
     const { id } = useParams();
     const navigate = useNavigate();
     const songToEdit = songs.find(song => song.id === parseInt(id));
-    const [song, setSong] = useState(songToEdit || { title: '', artist: '', genre: '', decade: '', videoLink: '' });
+    const [song, setSong] = useState(songToEdit || { title: songToEdit.title, artist: songToEdit.artist, genre: songToEdit.genre, image: songToEdit.image, decade: songToEdit.decade, videoLink: songToEdit.videoURL });
   
 
       const handleChange = (e) => {
@@ -44,6 +44,11 @@ function EditSongPage({ songs, updateSong }) {
         <label>
           Genre:
           <input type="text" name="genre" value={song.genre} onChange={handleChange} required />
+        </label>
+        <br />
+        <label>
+          Image:
+          <input type="text" name="image" value={song.image} onChange={handleChange} required />
         </label>
         <br />
         <label>
