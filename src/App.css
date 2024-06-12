@@ -127,7 +127,7 @@
 	justify-content: space-between;
 	text-align: center;
 	padding: 20px;
-}
+	}
 .container-about img {
 	border-radius: 50%;
 	width: 150px;
@@ -136,16 +136,22 @@
 .container-about h5 {
 	font-family: 'Courier New', Courier, monospace;
 	font-size: 15px;
-	padding: 5px 30px;
+	padding: 5px 60px;
+}
+.container-about div{
+	width: 30%;
 }
 
 .random-song-div {
-	min-height: 71.5vh;
+	min-height: 73.5vh;
 	color: black;
 	width: 70%;
 	margin: 0 auto;
 	background-color: aliceblue;
 	padding: 1vh 0vw;
+}
+.random-song-showing{
+	margin: 0 5vw;
 }
 
 .random-song-div img {
@@ -165,8 +171,10 @@
 }
 .random-song-info {
 	text-align: left;
-	font-size: 1.3em;
+	font-size: 1.5em;
 	padding-left: 10vh;
+	max-width: 40%;
+	margin-right: 15px;
 }
 
 .nav {

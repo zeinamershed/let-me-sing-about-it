@@ -3,7 +3,8 @@ import axios from 'axios';
 import { API_URL } from '../config.js';
 import { Link } from 'react-router-dom';
 import discoBall from '../assets/discoball.webp';
-import Confetti from "react-confetti";
+import Confetti from 'react-confetti';
+import { Tooltip } from 'react-tooltip';
 
 const RandomSongPage = () => {
 	const [randomSong, setRandomSong] = useState(null);
@@ -17,11 +18,10 @@ const RandomSongPage = () => {
 				setTimeout(() => {
 					setRandomSong(data[randomIndex]);
 					setShowConfetti(true);
-                    setTimeout(() => {
-                        setShowConfetti(false);
-                    }, 5000);
+					setTimeout(() => {
+						setShowConfetti(false);
+					}, 5000);
 				}, 2000);
-				
 			} catch (error) {
 				console.log(error);
 			}
@@ -44,7 +44,7 @@ const RandomSongPage = () => {
 					/>
 				</>
 			) : (
-				<div>
+				<div className="random-song-showing">
 					<h1>Congratulations!</h1>
 					{showConfetti && <Confetti />}
 					<h3>Your random song is...</h3>
@@ -55,22 +55,28 @@ const RandomSongPage = () => {
 							<img
 								src={randomSong.image}
 								alt={`Song of ${randomSong.title}`}
+								data-tooltip-id="image-tooltip"
+								data-tooltip-content={randomSong.attribution}
 							/>
-							{/* <h5>{randomSong.attribution}</h5> */}
+							<Tooltip id="image-tooltip" place="bottom" effect="float" />
 						</div>
 						<div className="random-song-info">
 							<p>
-								<strong>Artist:</strong> {randomSong.artist}
+								<strong>Artist:</strong> <u>{randomSong.artist}</u>
 							</p>
 							<p>
-								<strong>Genre:</strong> {randomSong.genre}
+								<strong>Album:</strong> <u>{randomSong.album}</u>
 							</p>
 							<p>
-								<strong>Decade:</strong> {randomSong.decade}
+								<strong>Genre:</strong> <u>{randomSong.genre}</u>
+							</p>
+							<p>
+								<strong>Decade:</strong> <u>{randomSong.decade}</u>
+							</p>
+							<p>
+								<strong>Something cool:</strong> <u>{randomSong.trivia.aboutSong}</u>
 							</p>
 							<br />
-							<h4>Lyrics:</h4>
-							<section>{randomSong.lyrics}</section>
 						</div>
 					</div>
 					<hr className="hr-random" />
