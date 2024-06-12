@@ -27,10 +27,12 @@ const OneSongDetails = ({ songs, addFavorite, removeFavorite, currUser, deleteSo
 	return (
 		<div className="for-all-divs">
 			<div className="one-song-detail">
+			<Link to={"/songs/1"}>
 				<img
 					src={filteredSong.image}
 					alt={filteredSong.title}
 				/>
+			</Link>
 				{/* <p className='small-text-license'>{filteredSong.attribution}</p> */}
 			</div>
 			<div className="one-song-info">
