@@ -19,7 +19,7 @@ const RandomSongPage = () => {
 					setShowConfetti(true);
                     setTimeout(() => {
                         setShowConfetti(false);
-                    }, 10000);
+                    }, 5000);
 				}, 2000);
 				
 			} catch (error) {

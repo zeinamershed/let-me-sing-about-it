@@ -35,7 +35,7 @@ const SignUp = ({ setCurrUser }) => {
       setTimeout(() => {
         setShowConfetti(false);
         navigate('/');
-      }, 5000);
+      }, 3000);
     } catch (error) {
       console.error('Error creating user:', error);
       setError('An error occurred while creating the user. Please try again later.');
