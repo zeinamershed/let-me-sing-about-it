@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../config';
+import Confetti from 'react-confetti'
 
 const SignUp = ({ setCurrUser }) => {
   const [username, setUsername] = useState('');
@@ -9,6 +10,7 @@ const SignUp = ({ setCurrUser }) => {
   const [password, setPassword] = useState('');
   const [image, setImage] = useState('');
   const [error, setError] = useState(null);
+  const [showConfetti, setShowConfetti] = useState(false);
   const navigate = useNavigate();
   
 
@@ -29,7 +31,11 @@ const SignUp = ({ setCurrUser }) => {
       const { data } = await axios.post(`${API_URL}/users`, newUser);
       console.log('User created:', data);
       setCurrUser(data);
-      navigate('/');
+      setShowConfetti(true);
+      setTimeout(() => {
+        setShowConfetti(false);
+        navigate('/');
+      }, 5000);
     } catch (error) {
       console.error('Error creating user:', error);
       setError('An error occurred while creating the user. Please try again later.');
@@ -39,6 +45,7 @@ const SignUp = ({ setCurrUser }) => {
 
   return (
     <div className='for-all-divs'>
+      {showConfetti && <Confetti />}
       <h1>New here? Sign up!</h1>
       <div>
         <form onSubmit={handleSignUp} className='sign-up-form'>

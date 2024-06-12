@@ -3,9 +3,11 @@ import axios from 'axios';
 import { API_URL } from '../config.js';
 import { Link } from 'react-router-dom';
 import discoBall from '../assets/discoball.webp';
+import Confetti from "react-confetti";
 
 const RandomSongPage = () => {
 	const [randomSong, setRandomSong] = useState(null);
+	const [showConfetti, setShowConfetti] = useState(false);
 	let randomIndex = 0;
 	useEffect(() => {
 		async function fetchRandomSong() {
@@ -14,6 +16,10 @@ const RandomSongPage = () => {
 				getRandomIndex(data);
 				setTimeout(() => {
 					setRandomSong(data[randomIndex]);
+					setShowConfetti(true);
+                    setTimeout(() => {
+                        setShowConfetti(false);
+                    }, 10000);
 				}, 2000);
 			} catch (error) {
 				console.log(error);
@@ -39,6 +45,7 @@ const RandomSongPage = () => {
 			) : (
 				<div>
 					<h1>Congratulations!</h1>
+					{showConfetti && <Confetti />}
 					<h3>Your random song is...</h3>
 					<h1>{randomSong.title}</h1>
 					<hr className="hr-random" />
