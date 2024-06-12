@@ -22,6 +22,8 @@ const OneSongDetails = ({
         return <p>Song not found!</p>;
     }
 
+
+
     function handleDelete() {
         deleteSong(filteredSong.id);
         nav(`/songs`);
@@ -42,7 +44,7 @@ const OneSongDetails = ({
             </div>
 			<div className="one-song-info">
 				<h2 className='h2-one-song'>
-					{filteredSong.title}{' '}
+					{filteredSong.title}{'                     '}
 					{currUser && (
 						<div>
 							{currUser.favorites.includes(filteredSong.id) ? (
@@ -63,7 +65,9 @@ const OneSongDetails = ({
 							
 						</div>
 					)}
-					{currUser.id === uploadedBy.userId ? (
+					{currUser && (
+						<div>
+						{currUser.id === uploadedBy.userId ? (
 								<div>
 									<Link to={`/edit-song/${filteredSong.id}`}>
 										<button className="for-all-songs-btn">
@@ -79,7 +83,9 @@ const OneSongDetails = ({
 								</div>
 							) : (
 								<span></span>
+							)}</div>
 							)}
+					
 				</h2>
 				<h4>
 					{filteredSong.artist}, {filteredSong.album}, {filteredSong.genre},{' '}
