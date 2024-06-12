@@ -17,12 +17,9 @@ import NotFound from './pages/NotFound';
 import SignUp from './components/SignUp';
 import LogInn from './components/LogInn';
 import ProfilePage from './pages/ProfilePage';
-<<<<<<< HEAD
 import ScrollToTop from './components/ScrollToTop';
 import OneDecadeFiltered from './pages/OneDecadeFiltered';
-=======
 import EditSongPage from './pages/EditSongPage';
->>>>>>> zeina
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -118,12 +115,8 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/signup" element={<SignUp setCurrUser={setCurrUser} />} />
         <Route path="/login" element={<LogInn setCurrUser={setCurrUser} />} />
-<<<<<<< HEAD
         <Route path="/profile" element={<ProfilePage currUser={currUser} setCurrUser={setCurrUser} songs={songs}/>} />
-=======
-        <Route path="/profile" element={<ProfilePage currUser={currUser} setCurrUser={setCurrUser} />} />
         <Route path='/edit-song/:id' element={<EditSongPage songs={songs} updateSong={updateSong} />} />
->>>>>>> zeina
       </Routes>
 
       <br />
