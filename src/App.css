@@ -3,6 +3,15 @@
 	text-align: center;
 	min-height: 100vh;
 	background-color: rgb(46, 49, 88);
+	--rt-color-white: #fff;
+	--rt-color-dark: #222;
+	--rt-color-success: #8dc572;
+	--rt-color-error: #be6464;
+	--rt-color-warning: #f0ad4e;
+	--rt-color-info: #337ab7;
+	--rt-opacity: 0.9;
+	--rt-transition-show-delay: 0.15s;
+	--rt-transition-closing-delay: 0.15s;
 }
 /* rgb(200, 193, 207); */
 .home-page-btn {
@@ -95,7 +104,6 @@
 	margin: 1.5vh 1vw;
 }
 .footer h5 {
-	
 	color: black;
 }
 
@@ -292,7 +300,6 @@
 	background-position: right center;
 }
 
-
 .all-songs-info-container {
 	border-bottom: 1px solid grey;
 	color: #333;
@@ -312,11 +319,11 @@
 
 .for-all-songs-btn:focus,
 .for-all-songs-btn:focus-visible {
-  outline: none;
+	outline: none;
 }
 
-.one-song-info button{
-padding: 3px;
+.one-song-info button {
+	padding: 3px;
 }
 
 .links-songs {
@@ -405,16 +412,16 @@ padding: 3px;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 	margin-top: 5px;
-	text-decoration:underline;
+	text-decoration: underline;
 }
 
 .trivia-section {
 	margin: 0 auto 20px;
 	width: 40%;
 }
-.trivia-box-inside{
+.trivia-box-inside {
 	width: 100%;
-	display:flex;
+	display: flex;
 	justify-content: space-evenly;
 }
 .trivia-title {
@@ -438,60 +445,63 @@ padding: 3px;
 	border-left: 2px solid #712285;
 	height: 26vh;
 	margin: 0 2vw 2vh;
-  }
+}
 
-.small-text-license{
+.small-text-license {
 	font-size: small;
 	margin: 0;
 	width: 80%;
 }
 
-.logo{
-	max-height:15vh;
+.logo {
+	max-height: 15vh;
 }
 
-.add-song-form{
+.add-song-form {
 	margin: 0 auto;
 	width: 70%;
 	text-align: left;
 }
 
-
-
 /*user profile*/
-.user-profile-page{
+.user-profile-page {
 	display: flex;
 	margin: 3vh auto;
 	justify-content: space-between;
 }
-.user-profile-box{
+.user-profile-box {
 	width: 40%;
 	margin: 0 auto;
 	padding: 3px;
 }
 
-.user-profile-1:first-child{
+.user-profile-1:first-child {
 	width: 50%;
 	margin-left: 5vw;
 }
 
-.user-profile-box img{
-max-width: 75%;
-max-height: 50%;
-border-image: linear-gradient(rgba(79, 12, 134, 1), rgba(121, 14, 137, 1), rgba(0, 212, 255, 1)) 30;
-border-width: 10px;
-border-style: solid;
+.user-profile-box img {
+	max-width: 75%;
+	max-height: 50%;
+	border-image: linear-gradient(
+			rgba(79, 12, 134, 1),
+			rgba(121, 14, 137, 1),
+			rgba(0, 212, 255, 1)
+		)
+		30;
+	border-width: 10px;
+	border-style: solid;
 }
-.user-profile-1 hr{
-width: 100%;
-}
-
-.user-info{
+.user-profile-1 hr {
 	width: 100%;
-	text-align: left;	
 }
 
-.user-info-small{
+.user-info {
+	width: 100%;
+	text-align: left;
+}
+
+.user-info-small {
 	width: 80%;
 	text-align: left;
 	font-size: 0.8em;
@@ -499,40 +509,39 @@ width: 100%;
 	line-height: 1em;
 }
 
-
-.favorite-song-user{
-	border-bottom:1px dashed #303169;
-	padding:1vh 1vw;	
+.favorite-song-user {
+	border-bottom: 1px dashed #303169;
+	padding: 1vh 1vw;
 }
-.div-for-scroll{
+.div-for-scroll {
 	width: 100%;
 	max-height: 250px;
 	overflow-y: scroll;
 	border: 1px solid #712285;
 	-ms-overflow-style: none;
-  scrollbar-width: none;
+	scrollbar-width: none;
 }
 
-.fav-songs-specific{
-	display:flex;
+.fav-songs-specific {
+	display: flex;
 	justify-content: space-around;
 	width: 100%;
 	align-items: center;
 }
 
-.fav-songs-specific div{
+.fav-songs-specific div {
 	width: 25%;
 }
 
-.logo-favs{
-	height:100px;	
+.logo-favs {
+	height: 100px;
 }
 
-.added-song-user{
+.added-song-user {
 	min-width: 300px;
-	border-bottom:1px dashed #303169;
-	padding:1vh 1vw;	
-	display:flex;
+	border-bottom: 1px dashed #303169;
+	padding: 1vh 1vw;
+	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-items: center;
@@ -548,22 +557,22 @@ width: 100%;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	color: black;
 	text-align: left;
-  }
-  
-  .add-song-page h1 {
+}
+
+.add-song-page h1 {
 	text-align: center;
 	color: #712285;
 	margin-bottom: 2vh;
-  }
-  
-  .add-song-form label {
+}
+
+.add-song-form label {
 	display: block;
 	margin-bottom: 1em;
 	color: #303169;
-  }
-  
-  .add-song-form input,
-  .add-song-form select {
+}
+
+.add-song-form input,
+.add-song-form select {
 	width: 100%;
 	padding: 10px;
 	margin-top: 5px;
@@ -571,19 +580,19 @@ width: 100%;
 	background: rgba(255, 255, 255, 0.432);
 	color: #303169;
 	font-size: 1em;
-  }
-  
-  .add-song-form button {
+}
+
+.add-song-form button {
 	display: block;
 	width: fit-content;
 	margin: 2vh auto;
 	padding: 10px 20px;
 	background: rgb(79, 12, 134);
 	background: linear-gradient(
-	  50deg,
-	  rgba(79, 12, 134, 1) 17%,
-	  rgba(121, 14, 137, 1) 43%,
-	  rgba(0, 212, 255, 1) 100%
+		50deg,
+		rgba(79, 12, 134, 1) 17%,
+		rgba(121, 14, 137, 1) 43%,
+		rgba(0, 212, 255, 1) 100%
 	);
 	color: aliceblue;
 	border: none;
@@ -591,27 +600,27 @@ width: 100%;
 	cursor: pointer;
 	font-size: 1.2em;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .add-song-form button:hover {
+}
+
+.add-song-form button:hover {
 	transform: translateY(-5px);
 	box-shadow: 0 12px 20px rgba(0, 0, 0, 0.5);
-  }
-  
-  .add-song-page a {
+}
+
+.add-song-page a {
 	display: block;
 	text-align: center;
 	margin-top: 2vh;
 	color: rgba(79, 12, 134, 1);
 	text-decoration: none;
 	transition: color 0.3s ease;
-  }
-  
-  .add-song-page a:hover {
+}
+
+.add-song-page a:hover {
 	color: rgba(121, 14, 137, 1);
-  }
-  
-  .add-song-form textarea {
+}
+
+.add-song-form textarea {
 	width: 100%;
 	padding: 10px;
 	margin-top: 5px;
@@ -619,4 +628,4 @@ width: 100%;
 	background: rgba(255, 255, 255, 0.1);
 	color: #303169;
 	font-size: 1em;
-  }
+}

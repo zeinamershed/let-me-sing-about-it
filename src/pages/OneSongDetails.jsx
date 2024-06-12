@@ -1,39 +1,45 @@
 import React from 'react';
-import { Link, useParams , useNavigate  } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-	faTrash,
-	faPenToSquare,
-} from '@fortawesome/free-solid-svg-icons';
+import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
+import { Tooltip } from 'react-tooltip';
 
-const OneSongDetails = ({ songs, addFavorite, removeFavorite, currUser, deleteSong }) => {
-	const { songId } = useParams();
-	const nav = useNavigate();
-	const filteredSong = songs.find((song) => song.id === songId);
-	const { uploadedBy } = filteredSong;
+const OneSongDetails = ({
+    songs,
+    addFavorite,
+    removeFavorite,
+    currUser,
+    deleteSong,
+}) => {
+    const { songId } = useParams();
+    const nav = useNavigate();
+    const filteredSong = songs.find((song) => song.id === songId);
+    const { uploadedBy } = filteredSong;
 
-	if (!filteredSong) {
-		return <p>Song not found!</p>;
-	}
+    if (!filteredSong) {
+        return <p>Song not found!</p>;
+    }
 
-	function handleDelete(){
-		deleteSong(filteredSong.id)
-		nav(`/songs`)
-	}
+    function handleDelete() {
+        deleteSong(filteredSong.id);
+        nav(`/songs`);
+    }
 
-	return (
-		<div className="for-all-divs">
-			<div className="one-song-detail">
-			<Link to={"/songs/1"}>
-				<img
-					src={filteredSong.image}
-					alt={filteredSong.title}
-				/>
-			</Link>
-				{/* <p className='small-text-license'>{filteredSong.attribution}</p> */}
-			</div>
+    return (
+        <div className="for-all-divs">
+            <div className="one-song-detail">
+                <Link to={'/songs/1'} onClick={() => {}}>
+                    <img
+                        src={filteredSong.image}
+                        alt={filteredSong.title}
+                        data-tooltip-id="image-tooltip"
+                        data-tooltip-content={filteredSong.attribution}
+                    />
+                </Link>
+                <Tooltip id="image-tooltip" place="bottom" effect="float" />
+            </div>
 			<div className="one-song-info">
 				<h2>
 					{filteredSong.title}{' '}
@@ -56,10 +62,11 @@ const OneSongDetails = ({ songs, addFavorite, removeFavorite, currUser, deleteSo
 							)}
 							{currUser.id === uploadedBy.userId ? (
 								<div>
-									<Link to={`/edit-song/${filteredSong.id}`} >
-											<button className="for-all-songs-btn" ><FontAwesomeIcon icon={faPenToSquare} />
-											</button>
-										</Link>
+									<Link to={`/edit-song/${filteredSong.id}`}>
+										<button className="for-all-songs-btn">
+											<FontAwesomeIcon icon={faPenToSquare} />
+										</button>
+									</Link>
 									<button
 										onClick={() => handleDelete()}
 										className="for-all-songs-btn"
@@ -111,9 +118,6 @@ const OneSongDetails = ({ songs, addFavorite, removeFavorite, currUser, deleteSo
 				<Link to="/songs">
 					<button className="random-btn">Back</button>
 				</Link>
-				{/* <Link to={`/edit-song/${filteredSong.id}`}>
-         <button className="edit-btn">Edit song</button>
-        </Link> */}
 			</div>
 		</div>
 	);
