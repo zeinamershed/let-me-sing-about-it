@@ -17,8 +17,12 @@ import NotFound from './pages/NotFound';
 import SignUp from './components/SignUp';
 import LogInn from './components/LogInn';
 import ProfilePage from './pages/ProfilePage';
+<<<<<<< HEAD
 import ScrollToTop from './components/ScrollToTop';
 import OneDecadeFiltered from './pages/OneDecadeFiltered';
+=======
+import EditSongPage from './pages/EditSongPage';
+>>>>>>> zeina
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -71,6 +75,18 @@ function App() {
     setSongs((prevSongs) => [...prevSongs, newSong]);
   };
 
+  const updateSong = async (updatedSong) => {
+    try {
+      const { data } = await axios.put(`${API_URL}/songs/${updatedSong.id}`, updatedSong);
+      setSongs((prevSongs) =>
+        prevSongs.map((song) =>
+          song.id === data.id ? data : song
+        )
+      );
+    } catch (error) {
+      console.error('Error updating song:', error);
+    }
+  };
 
   async function deleteSong(songId) {
     try {
@@ -81,6 +97,8 @@ function App() {
       console.error('Error deleting song:', error);
     }
   }
+
+
 
   return (
     <>
@@ -100,7 +118,12 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/signup" element={<SignUp setCurrUser={setCurrUser} />} />
         <Route path="/login" element={<LogInn setCurrUser={setCurrUser} />} />
+<<<<<<< HEAD
         <Route path="/profile" element={<ProfilePage currUser={currUser} setCurrUser={setCurrUser} songs={songs}/>} />
+=======
+        <Route path="/profile" element={<ProfilePage currUser={currUser} setCurrUser={setCurrUser} />} />
+        <Route path='/edit-song/:id' element={<EditSongPage songs={songs} updateSong={updateSong} />} />
+>>>>>>> zeina
       </Routes>
 
       <br />
