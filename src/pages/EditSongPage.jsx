@@ -8,8 +8,8 @@ function EditSongPage({ songs, updateSong }) {
     const { id } = useParams();
     const navigate = useNavigate();
     const songToEdit = songs.find(song => song.id === parseInt(id));
-    const [song, setSong] = useState(songToEdit || { title: songToEdit.title, artist: songToEdit.artist, genre: songToEdit.genre, image: songToEdit.image, decade: songToEdit.decade, videoLink: songToEdit.videoURL });
-  
+    const [song, setSong] = useState({ title: songToEdit.title, artist: songToEdit.artist, genre: songToEdit.genre, image: songToEdit.image, decade: songToEdit.decade, videoLink: songToEdit.videoURL });
+    
 
       const handleChange = (e) => {
         const { name, value } = e.target;
@@ -24,6 +24,9 @@ function EditSongPage({ songs, updateSong }) {
         updateSong(song);
         navigate('/');
       };
+
+
+
 
       
   return (

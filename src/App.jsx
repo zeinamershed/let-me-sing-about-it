@@ -74,7 +74,7 @@ function App() {
 
   const updateSong = async (updatedSong) => {
     try {
-      const { data } = await axios.put(`${API_URL}/songs/${updatedSong.id}`, updatedSong);
+      const { data } = await axios.patch(`${API_URL}/songs/${updatedSong.id}`, updatedSong);
       setSongs((prevSongs) =>
         prevSongs.map((song) =>
           song.id === data.id ? data : song
