@@ -3,7 +3,7 @@ import HomePage from './pages/HomePage';
 import DecadesPage from './pages/DecadesPage';
 import RandomSongPage from './pages/RandomSongPage';
 import FavoriteSongsPage from './pages/FavoriteSongsPage';
-import { Routes, Route, ScrollRestoration } from "react-router-dom";
+import { Routes, Route} from "react-router-dom";
 import About from '../src/pages/AboutPage'
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -116,7 +116,7 @@ function App() {
         <Route path="/signup" element={<SignUp setCurrUser={setCurrUser} />} />
         <Route path="/login" element={<LogInn setCurrUser={setCurrUser} />} />
         <Route path="/profile" element={<ProfilePage currUser={currUser} setCurrUser={setCurrUser} songs={songs} deleteSong={deleteSong}/>} />
-        <Route path='/edit-song/:id' element={<EditSongPage songs={songs} updateSong={updateSong} />} />
+        <Route path='/edit-song/:id' element={<EditSongPage songs={songs} updateSong={updateSong} currUser={currUser}/>} />
       </Routes>
 
       <br />

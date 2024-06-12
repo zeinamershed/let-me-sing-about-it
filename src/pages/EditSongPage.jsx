@@ -1,10 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
-function EditSongPage({ songs, updateSong }) {
+function EditSongPage({ songs, updateSong, currUser}) {
 	const { id } = useParams();
 	const navigate = useNavigate();
 	const songToEdit = songs.find((song) => song.id === id);
+
+  if (!currUser) {
+		return (
+			<div className="for-all-divs">
+				<p>You need to be logged in to access this feature</p>
+			</div>
+		);
+	}
 
 	const [song, setSong] = useState({
 		id: songToEdit.id,

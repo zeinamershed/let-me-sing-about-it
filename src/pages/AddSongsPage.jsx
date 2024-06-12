@@ -20,6 +20,14 @@ function AddSongsPage({ addSong, currUser }) {
 	});
 	const navigate = useNavigate();
 
+  if (!currUser) {
+		return (
+			<div className="for-all-divs">
+				<p>You need to be logged in to access this feature</p>
+			</div>
+		);
+	}
+
 	const handleChange = (e) => {
 		const { name, value } = e.target;
 		setSong((prevSong) => ({
