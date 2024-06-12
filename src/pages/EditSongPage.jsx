@@ -10,10 +10,17 @@ function EditSongPage({ songs, updateSong }) {
 		id: songToEdit.id,
 		title: songToEdit.title,
 		artist: songToEdit.artist,
+        album: songToEdit.album,
 		genre: songToEdit.genre,
+        decade: songToEdit.decade,
 		image: songToEdit.image,
-		decade: songToEdit.decade,
+		attribution: songToEdit.attribution,
+        trivia: {aboutArtist: songToEdit.aboutArtist,
+                aboutSong: songToEdit.aboutSong
+                },
 		videoUrl: songToEdit.videoUrl,
+        
+
 	});
 
 	const handleChange = (e) => {
@@ -32,6 +39,18 @@ function EditSongPage({ songs, updateSong }) {
 
 	const handleCancel = () => {
 		navigate(`/songs/${id}`);
+	};
+
+
+    const handleTriviaChange = (e) => {
+		const { name, value } = e.target;
+		setSong((prevSong) => ({
+			...prevSong,
+			trivia: {
+				...prevSong.trivia,
+				[name]: value,
+			},
+		}));
 	};
 
 	return (
@@ -61,6 +80,17 @@ function EditSongPage({ songs, updateSong }) {
 						/>
 					</label>
 					<br />
+                    <label>
+                        Album:
+                        <input
+                        type="text"
+                        name="album"
+                        value={song.album}
+                        onChange={handleChange}
+                        required
+                        />
+                    </label>
+                    <br />
 					<label>
 						Genre:
 						<input
@@ -72,8 +102,24 @@ function EditSongPage({ songs, updateSong }) {
 						/>
 					</label>
 					<br />
+                    <label>
+                            Decade:
+                            <select
+                            name="decade"
+                            value={song.decade}
+                            onChange={handleChange}
+                            required
+                            >
+                            <option value="80's">80's</option>
+                            <option value="90's">90's</option>
+                            <option value="00's">00's</option>
+                            <option value="10's">10's</option>
+                            <option value="20's">20's</option>
+                            </select>
+                        </label>
+                        <br />
 					<label>
-						Image:
+						Image URL:
 						<input
 							type="text"
 							name="image"
@@ -83,19 +129,35 @@ function EditSongPage({ songs, updateSong }) {
 						/>
 					</label>
 					<br />
+                        <label>
+                        Image Attribution:
+                        <input
+                        type="text"
+                        name="attribution"
+                        value={song.attribution}
+                        onChange={handleChange}
+                        />
+                    </label>
+                    <br />
+                    <label>
+                        About Artist:
+                        <textarea
+                        name="aboutArtist"
+                        value={song.trivia.aboutArtist}
+                        onChange={handleTriviaChange}
+                        />
+                    </label>
+                    <label>
+                        About Song:
+                        <textarea
+                        name="aboutSong"
+                        value={song.trivia.aboutSong}
+                        onChange={handleTriviaChange}
+                        />
+                    </label>
+                    <br />
 					<label>
-						Decade:
-						<input
-							type="text"
-							name="decade"
-							value={song.decade}
-							onChange={handleChange}
-							required
-						/>
-					</label>
-					<br />
-					<label>
-						Video Link:
+						Video URL:
 						<input
 							type="text"
 							name="videoURL"

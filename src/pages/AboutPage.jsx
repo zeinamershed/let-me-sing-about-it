@@ -22,7 +22,7 @@ function AboutPage() {
                 <img src={andreia} alt='andreia-img' />
                 <h5>I'm Andreia, a web development student at Ironhack. For "Let Me Sing About It," 
                     I specialized in front-end development using React. 
-                    I love coding and enjoy.</h5>
+                    I love coding.</h5>
                 <a href='https://github.com/andreiapsa' >Andreia's GitHub</a><br />
                 <a href='https://www.linkedin.com/in/andreiasa/' >Andreia's LinkedIn</a>
 
@@ -31,7 +31,7 @@ function AboutPage() {
                 <img src={dani} alt='dani-img' />
                 <h5>I'm Daniela, a web development student at Ironhack. For "Let Me Sing About It," 
                     I specialized in front-end development using React.
-                     I love coding and enjoy .</h5>
+                     I love coding.</h5>
                 <a href='https://github.com/Dani-A-Dias' >Dani's GitHub</a> <br />
                 <a href='https://www.linkedin.com/in/daniela-dias-604926243/' >Dani's LinkedIn</a>
 
