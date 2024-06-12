@@ -18,6 +18,7 @@ import SignUp from './components/SignUp';
 import LogInn from './components/LogInn';
 import ProfilePage from './pages/ProfilePage';
 import ScrollToTop from './components/ScrollToTop';
+import OneDecadeFiltered from './pages/OneDecadeFiltered';
 
 function App() {
   const [songs, setSongs] = useState([]);
@@ -89,6 +90,7 @@ function App() {
         <Route path='/' element={<HomePage currUser={currUser}/>} />
         <Route path='/songs' element={<AllSongsPage songs={songs} addFavorite={addFavorite} removeFavorite={removeFavorite} currUser={currUser} deleteSong={deleteSong}/>} />
         <Route path='/decades' element={<DecadesPage />} />
+        <Route path="decades/:decadeId" element={<OneDecadeFiltered songs={songs}/>} />
         <Route path='/random' element={<RandomSongPage />} />
         <Route path='/favorites' element={<FavoriteSongsPage currUser={currUser} songs={songs} />} />
         <Route path='/about' element={<About />} />
