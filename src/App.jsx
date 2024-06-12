@@ -25,7 +25,7 @@ function App() {
   const [songs, setSongs] = useState([]);
   const [currUser, setCurrUser] = useState();
   
-
+/* Get songs FCT */
   useEffect(() => {
     const fetchSongs = async () => {
       try {
@@ -39,7 +39,7 @@ function App() {
 
     fetchSongs();
   }, []);
-
+/* Handle favs FCT */
   const addFavorite = async (songId) => {
     if (!currUser) return;
 
@@ -67,24 +67,24 @@ function App() {
       console.error('Error removing favorite:', error);
     }
   };
-
+/* ADD SONG FCT */
   const addSong = (newSong) => {
     setSongs((prevSongs) => [...prevSongs, newSong]);
   };
-
+/* Update SONG FCT */
   const updateSong = async (updatedSong) => {
     try {
-      const { data } = await axios.patch(`${API_URL}/songs/${updatedSong.id}`, updatedSong);
-      setSongs((prevSongs) =>
-        prevSongs.map((song) =>
-          song.id === data.id ? data : song
-        )
-      );
+        const { data } = await axios.patch(`${API_URL}/songs/${updatedSong.id}`, updatedSong);
+        setSongs((prevSongs) =>
+            prevSongs.map((song) =>
+                song.id === data.id ? data : song
+            )
+        );
     } catch (error) {
-      console.error('Error updating song:', error);
+        console.error('Error updating song:', error);
     }
-  };
-
+};
+/* Delete SONG FCT */
   async function deleteSong(songId) {
     try {
       await axios.delete(`${API_URL}/songs/${songId}`);
@@ -103,7 +103,7 @@ function App() {
       <ScrollToTop/>
       <Routes>
         <Route path='/' element={<HomePage currUser={currUser}/>} />
-        <Route path='/songs' element={<AllSongsPage songs={songs} addFavorite={addFavorite} removeFavorite={removeFavorite} currUser={currUser} deleteSong={deleteSong}/>} />
+        <Route path='/songs' element={<AllSongsPage songs={songs} addFavorite={addFavorite} removeFavorite={removeFavorite} currUser={currUser} deleteSong={deleteSong} updateSong={updateSong}/>} />
         <Route path='/decades' element={<DecadesPage />} />
         <Route path="decades/:decadeId" element={<OneDecadeFiltered songs={songs}/>} />
         <Route path='/random' element={<RandomSongPage />} />

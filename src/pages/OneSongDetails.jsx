@@ -55,9 +55,10 @@ const OneSongDetails = ({ songs, addFavorite, removeFavorite, currUser, deleteSo
 							)}
 							{currUser.id === uploadedBy.userId ? (
 								<div>
-									<button className="for-all-songs-btn">
-										<FontAwesomeIcon icon={faPenToSquare} />
-									</button>
+									<Link to={`/edit-song/${filteredSong.id}`} >
+											<button className="for-all-songs-btn" ><FontAwesomeIcon icon={faPenToSquare} />
+											</button>
+										</Link>
 									<button
 										onClick={() => handleDelete()}
 										className="for-all-songs-btn"

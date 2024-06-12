@@ -7,6 +7,7 @@ function AddSongsPage({ addSong, currUser }) {
 	const [song, setSong] = useState({
 		title: '',
 		artist: '',
+    album: '',
 		genre: '',
 		decade: '',
 		image: '',
@@ -81,6 +82,16 @@ function AddSongsPage({ addSong, currUser }) {
           type="text"
           name="artist"
           value={song.artist}
+          onChange={handleChange}
+          required
+        />
+      </label>
+      <label>
+        Album:
+        <input
+          type="text"
+          name="album"
+          value={song.album}
           onChange={handleChange}
           required
         />
