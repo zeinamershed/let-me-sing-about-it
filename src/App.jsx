@@ -115,7 +115,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/signup" element={<SignUp setCurrUser={setCurrUser} />} />
         <Route path="/login" element={<LogInn setCurrUser={setCurrUser} />} />
-        <Route path="/profile" element={<ProfilePage currUser={currUser} setCurrUser={setCurrUser} songs={songs}/>} />
+        <Route path="/profile" element={<ProfilePage currUser={currUser} setCurrUser={setCurrUser} songs={songs} deleteSong={deleteSong}/>} />
         <Route path='/edit-song/:id' element={<EditSongPage songs={songs} updateSong={updateSong} />} />
       </Routes>
 
