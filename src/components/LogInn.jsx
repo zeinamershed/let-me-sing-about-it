@@ -51,6 +51,7 @@ const LogInn = ({ setCurrUser }) => {
               name="username"
               type="text"
               value={username}
+              placeholder='your username'
               onChange={(event) => setUsername(event.target.value)}
             />
           </label>
@@ -60,11 +61,12 @@ const LogInn = ({ setCurrUser }) => {
               name="password"
               type="password"
               value={password}
+              placeholder='your password'
               onChange={(event) => setPassword(event.target.value)}
             />
-          </label>
-          {error && <p className="error-message">{error}</p>}
+          </label>          
           <button type="submit">Login!</button>
+          {error && <p className="error-message">{error}</p>}
         </form>
       </div>
     </div>

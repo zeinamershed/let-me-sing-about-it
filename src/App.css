@@ -20,7 +20,6 @@
 	font-size: 2em;
 	width: 100%;
 	justify-items: center;
-	
 }
 
 .home-page-btn button {
@@ -132,7 +131,7 @@
 	justify-content: space-between;
 	text-align: center;
 	padding: 20px;
-	}
+}
 .container-about img {
 	border-radius: 50%;
 	width: 150px;
@@ -143,7 +142,7 @@
 	font-size: 15px;
 	padding: 5px 60px;
 }
-.container-about div{
+.container-about div {
 	width: 30%;
 }
 
@@ -155,7 +154,7 @@
 	background-color: aliceblue;
 	padding: 1vh 0vw;
 }
-.random-song-showing{
+.random-song-showing {
 	margin: 0 5vw;
 }
 
@@ -339,11 +338,10 @@
 	padding: 3px;
 }
 
-.h2-one-song{
+.h2-one-song {
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	
 }
 
 .links-songs {
@@ -365,13 +363,16 @@
 	flex-direction: column;
 	width: fit-content;
 	margin: 0 auto;
+	text-align: center;
+	padding: 5px ;
 }
 .sign-up-form input {
 	display: flex;
 	flex-direction: column;
 	width: fit-content;
-	margin: 1vh;
+	margin: 1vh auto;
 	text-align: center;
+		
 }
 
 .sign-up-form button {
@@ -385,13 +386,14 @@
 		rgba(0, 212, 255, 1) 100%
 	);
 	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
-	margin: 2vh;
+	margin: 3vh auto;
 	padding: 10px 20px;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
 	transition: transform 0.3s ease, box-shadow 0.3s ease;
 	overflow: hidden;
+	width: 140px;
 }
 
 .sign-up-form button:hover {
@@ -557,6 +559,7 @@
 	height: 100px;
 }
 
+/* Add page */
 .added-song-user {
 	min-width: 300px;
 	border-bottom: 1px dashed #303169;
@@ -567,7 +570,6 @@
 	align-items: center;
 }
 
-/* Add page */
 .add-song-page {
 	width: 70%;
 	margin: 0 auto;
