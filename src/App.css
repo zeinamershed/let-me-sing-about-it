@@ -64,13 +64,12 @@
 }
 
 .btn-all-songs {
-	/* background-image: url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-	background-position: right center; */
-	background-color: red;
+	background-image: url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+	background-position: right center;
 }
 
 .btn-all-decades {
-	background-image: url('src/assets/decades.avif');
+	background-image: url('https://images.unsplash.com/photo-1608048608029-99c772d199ed?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 	background-position: right center;
 }
 
@@ -80,11 +79,11 @@
 }
 
 .btn-fav-songs {
-	background-image: url('src/assets/favorites.avif');
+	background-image: url('https://images.unsplash.com/photo-1517263904808-5dc91e3e7044?q=80&w=1976&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 	background-position: right center;
 }
 .btn-add-songs {
-	background-image: url('src/assets/addsongs.jpg');
+	background-image: url('https://images.unsplash.com/photo-1497050284693-c7c48a96240a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 	background-position: center;
 }
 
