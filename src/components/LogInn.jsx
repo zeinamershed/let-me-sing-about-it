@@ -20,14 +20,14 @@ const LogInn = ({ setCurrUser }) => {
       console.log('Found user:', foundUser); 
 
       if (!foundUser) {
-        setError('User not found. Make sure to login with valid credentials');
+        setError('User or password incorrect. Make sure to login with valid credentials');
         return;
       }
 
       
       const doesPassMatch = foundUser.password.toString() === password;
       if (!doesPassMatch) {
-        setError('Incorrect password. Please try again.');
+        setError('User or password incorrect. Make sure to login with valid credentials');
         return;
       }
 

@@ -668,7 +668,7 @@
 }
 
 .input-search{
-	width: 200px;
+	width: 300px;
 	padding: 10px;
 	margin-top: 5px;
 	border-radius: 5px;
@@ -689,4 +689,5 @@
 	font-size: 2em;
 	color: #712285;
 	margin-right: 0.5vw;
+	margin-left:-2vw;
 }
