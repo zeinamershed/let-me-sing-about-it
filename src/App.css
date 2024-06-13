@@ -64,7 +64,7 @@
 }
 
 .btn-all-songs {
-	background-image: url('src/assets/allsongs.avif');
+	background-image: url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 	background-position: right center;
 }
 
@@ -74,7 +74,7 @@
 }
 
 .btn-rdm-songs {
-	background-image: url('src/assets/random.avif');
+	background-image: url('https://images.unsplash.com/photo-1528495612343-9ca9f4a4de28?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
 	background-position: right -150px;
 }
 
