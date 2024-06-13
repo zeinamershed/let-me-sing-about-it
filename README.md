@@ -94,4 +94,4 @@ Features to implement after the MVP:
 - [Github repository Front-End Link](https://github.com/zeinamershed/let-me-sing-about-it)
 - [Github repository Back-End Link](https://github.com/Dani-A-Dias/let-it-singaboutit-json-backend)
 - [Deployment Front-End Link](http://github.com)
-- [Deployment Back-End Link](http://github.com)
+- [Deployment Back-End Link](https://let-mesing-about-it-backend.adaptable.app/)

@@ -651,7 +651,7 @@
 	color: #303169;
 	font-size: 1em;
 }
-
+/* to make sure no one knows it's a button */
 .memeBTN{
 	background: none;
 	border:none
