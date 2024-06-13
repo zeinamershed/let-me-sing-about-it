@@ -45,16 +45,16 @@ Features to implement after the MVP:
 
 ## Data structure
 <h3>Components</h3>
-<ol>
+<ul>
 <li>Footer
 <li>LogIn
 <li>Navbar
 <li>ScrollToTop
 <li>SignUp
-</ol>
+</ul>
 
 <h3>Pages:</h3>
-<ol>
+<ul>
 <li>AboutPage
 <li>AddSongsPage
 <li>AllSongsPage
@@ -67,10 +67,10 @@ Features to implement after the MVP:
 <li>OneSongDetails
 <li>ProfilePage
 <li>RandomSongPage
-</ol>
+</ul>
 
 ## Tasks
-<ol>
+<ul>
 <li>Set up the project repository on GitHub.
 <li>Create the basic HTML structure and link CSS and JS files.
 <li>Create all the pages necessary for the CRUD MVP.
@@ -85,7 +85,7 @@ Features to implement after the MVP:
 <li>Deploy the application on a hosting platform (Netlifly for frontend, Adaptable for backend).
 <li>Create a presentation (slides) for the project.
 <li>Add secret easter eggs and fun stuff!
-</ol>
+</ul>
 
 ## Links
 

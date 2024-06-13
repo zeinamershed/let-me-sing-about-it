@@ -1,21 +1,46 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+import {
+	faTrash,
+	faPenToSquare,
+	faMagnifyingGlass,
+} from '@fortawesome/free-solid-svg-icons';
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
+import Search from '../components/Search';
 
 const AllSongsPage = ({
 	songs,
 	addFavorite,
 	removeFavorite,
 	currUser,
-	deleteSong
+	deleteSong,
 }) => {
+	const [searchTerm, setSearchTerm] = useState('');
+	const [filteredSongs, setFilteredSongs] = useState(songs);
+
+	useEffect(() => {
+		const result = songs.filter(
+			(song) =>
+				song.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+				song.artist.toLowerCase().includes(searchTerm.toLowerCase()) ||
+				song.genre.toLowerCase().includes(searchTerm.toLowerCase())
+		);
+		setFilteredSongs(result);
+	}, [searchTerm, songs]);
+
 	return (
 		<div className="for-all-divs">
-			{songs &&
-				songs.map((oneSong) => (
+			<div className='search-bar'>
+			<FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon'/>
+			<Search
+				searchTerm={searchTerm}
+				setSearchTerm={setSearchTerm}
+			/></div>
+
+			{filteredSongs &&
+				filteredSongs.map((oneSong) => (
 					<div
 						key={oneSong.id}
 						className="all-songs-info-container"
@@ -40,7 +65,7 @@ const AllSongsPage = ({
 							</div>
 						</Link>
 						{currUser && (
-							<div className='h2-one-song'>
+							<div className="h2-one-song">
 								{currUser.favorites.includes(oneSong.id) ? (
 									<button
 										onClick={() => removeFavorite(oneSong.id)}
@@ -58,11 +83,11 @@ const AllSongsPage = ({
 								)}
 								{currUser.id === oneSong.uploadedBy.userId ? (
 									<div>
-										<Link to={`/edit-song/${oneSong.id}`} >
-											<button className="for-all-songs-btn" ><FontAwesomeIcon icon={faPenToSquare} />
+										<Link to={`/edit-song/${oneSong.id}`}>
+											<button className="for-all-songs-btn">
+												<FontAwesomeIcon icon={faPenToSquare} />
 											</button>
 										</Link>
-
 
 										<button
 											onClick={() => deleteSong(oneSong.id)}
@@ -78,10 +103,10 @@ const AllSongsPage = ({
 						)}
 					</div>
 				))}
-				<br />
-				<Link to="/">
-						<button className="random-btn">Back</button>
-					</Link>
+			<br />
+			<Link to="/">
+				<button className="random-btn">Back</button>
+			</Link>
 		</div>
 	);
 };

@@ -666,3 +666,27 @@
 .memeBTN:focus-visible {
   outline: none
 }
+
+.input-search{
+	width: 200px;
+	padding: 10px;
+	margin-top: 5px;
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 0.432);
+	color: #303169;
+	font-size: 1em;
+}
+
+.search-bar{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 2vh;
+	border-bottom: 1px solid grey;
+}
+
+.search-icon{
+	font-size: 2em;
+	color: #712285;
+	margin-right: 1vw;
+}

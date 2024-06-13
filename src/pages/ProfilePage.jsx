@@ -3,7 +3,7 @@ import { Link, NavLink} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash, faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
-const ProfilePage = ({ currUser, songs, handleDelete }) => {
+const ProfilePage = ({ currUser, songs, deleteSong }) => {
 	if (!currUser) {
 		return (
 			<div className="for-all-divs">
@@ -18,13 +18,14 @@ const ProfilePage = ({ currUser, songs, handleDelete }) => {
 
 	const joinedDate = new Date(currUser.joinedIn);
 
-	// Filtrar as músicas favoritas do usuário
 	const favoriteSongs = songs.filter((song) =>
 		currUser.favorites.includes(song.id)
 	);
 	let createdSongs = songs.filter((song) =>
 		song.uploadedBy.userId.includes(currUser.id)
 	);
+
+
 	return (
 		<div className="for-all-divs">
 			<div className="user-profile-page">
@@ -77,7 +78,7 @@ const ProfilePage = ({ currUser, songs, handleDelete }) => {
 												</button>
 											</Link>
 											<button
-												onClick={() => handleDelete()}
+												onClick={() => deleteSong(song.id)}
 												className="for-all-songs-btn"
 											>
 												<FontAwesomeIcon icon={faTrash} />
