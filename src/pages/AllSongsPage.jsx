@@ -32,13 +32,22 @@ const AllSongsPage = ({
 
 	return (
 		<div className="for-all-divs">
-			<div className='search-bar'>
-			<FontAwesomeIcon icon={faMagnifyingGlass} className='search-icon'/>
-			<Search
-				searchTerm={searchTerm}
-				setSearchTerm={setSearchTerm}
-			/></div>
-
+			<div className="search-bar">
+				<FontAwesomeIcon
+					icon={faMagnifyingGlass}
+					className="search-icon"
+				/>
+				<Search
+					searchTerm={searchTerm}
+					setSearchTerm={setSearchTerm}
+					filteredSongs={filteredSongs}
+				/>
+			</div>
+			{filteredSongs.length === 0 && (
+				<div>
+					<p>No matching results found</p>
+				</div>
+			)}
 			{filteredSongs &&
 				filteredSongs.map((oneSong) => (
 					<div

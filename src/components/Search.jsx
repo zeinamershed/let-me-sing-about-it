@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Search = ({ searchTerm, setSearchTerm }) => {
+const Search = ({ searchTerm, setSearchTerm, filteredSongs }) => {
   const handleChange = (e) => {
     const newValue = e.target.value;
     setSearchTerm(newValue);
@@ -15,6 +15,7 @@ const Search = ({ searchTerm, setSearchTerm }) => {
         onChange={handleChange}
         className='input-search'
       />
+      
     </div>
   );
 };
