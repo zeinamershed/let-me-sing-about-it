@@ -73,9 +73,7 @@ const RandomSongPage = () => {
 							<p>
 								<strong>Decade:</strong> <u>{randomSong.decade}</u>
 							</p>
-							<p>
-								<strong>Something cool:</strong> <u>{randomSong.trivia.aboutSong}</u>
-							</p>
+							
 							<br />
 						</div>
 					</div>

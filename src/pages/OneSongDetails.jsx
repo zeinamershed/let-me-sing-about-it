@@ -17,12 +17,22 @@ const OneSongDetails = ({
     const nav = useNavigate();
     const filteredSong = songs.find((song) => song.id === songId);
     const { uploadedBy } = filteredSong;
+	
 
     if (!filteredSong) {
         return <p>Song not found!</p>;
     }
 
-
+	function memeRickFct(){
+				
+		nav(`/songs/1`)
+		
+		setTimeout(()=>{
+			window.alert("You just got rickroll'd :D")
+			
+		}, 500)
+	}
+	
 
     function handleDelete() {
         deleteSong(filteredSong.id);
@@ -32,14 +42,15 @@ const OneSongDetails = ({
     return (
         <div className="for-all-divs">
             <div className="one-song-detail">
-                <Link to={'/songs/1'} onClick={() => {}}>
+                <button className="memeBTN" onClick={() => {memeRickFct()}}>
                     <img
                         src={filteredSong.image}
                         alt={filteredSong.title}
                         data-tooltip-id="image-tooltip"
                         data-tooltip-content={filteredSong.attribution}
+						
                     />
-                </Link>
+                </button>
                 <Tooltip id="image-tooltip" place="bottom" effect="float" />
             </div>
 			<div className="one-song-info">
@@ -88,12 +99,12 @@ const OneSongDetails = ({
 					
 				</h2>
 				<h4>
-					{filteredSong.artist}, {filteredSong.album}, {filteredSong.genre},{' '}
+					By {filteredSong.artist}, <u>{filteredSong.album}</u>, {filteredSong.genre}, from the{' '} 
 					{filteredSong.decade}
 				</h4>
 			</div>
 			<div className="trivia-box">
-				<h4>Trivia</h4>
+				<h4>Something cool</h4>
 				<div className="trivia-box-inside">
 					<div className="trivia-section">
 						<p className="trivia-title">About the Artist:</p>

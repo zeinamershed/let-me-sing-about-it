@@ -651,3 +651,18 @@
 	color: #303169;
 	font-size: 1em;
 }
+
+.memeBTN{
+	background: none;
+	border:none
+}
+
+.memeBTN:hover{
+	background: none;
+	border:none
+}
+
+.memeBTN:focus,
+.memeBTN:focus-visible {
+  outline: none
+}

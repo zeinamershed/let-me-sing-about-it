@@ -25,7 +25,7 @@ const HomePage = ({ currUser }) => {
 					<Link to="/random">
 						<button className="btn-rdm-songs">
 							<h2>Random Song</h2>
-							<p>Feeling risky? Try a random song!</p>
+							<p>In the mood for a surprise? Try a random song!</p>
 						</button>
 					</Link>
 				</section>
