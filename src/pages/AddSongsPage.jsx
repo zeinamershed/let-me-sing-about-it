@@ -174,8 +174,11 @@ function AddSongsPage({ addSong, currUser }) {
       </label>
       <button type="submit">Add Song</button>
     </form>
+    <Link to="/" className='back-add-song'>
+				<button className="random-btn">Cancel</button>
+			</Link>
   </div>
-  <Link to="/">Back to All Songs</Link>
+  
 </div>
 	);
 }

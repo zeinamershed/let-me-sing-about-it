@@ -40,7 +40,7 @@ const HomePage = ({ currUser }) => {
 						<Link to="/add">
 							<button className="btn-add-songs">
 								<h2>Add Your Own Songs</h2>
-								<p>Follow the call of the disco ball</p>
+								<p>Follow the call of the disco ball!</p>
 							</button>
 						</Link>
 					) : (
