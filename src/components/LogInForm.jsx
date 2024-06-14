@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../config';
 
-const LogInn = ({ setCurrUser }) => {
+const LogInForm = ({ setCurrUser }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
@@ -73,4 +73,4 @@ const LogInn = ({ setCurrUser }) => {
   );
 };
 
-export default LogInn;
+export default LogInForm;

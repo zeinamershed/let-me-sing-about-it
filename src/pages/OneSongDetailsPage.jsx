@@ -6,56 +6,61 @@ import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 import { Tooltip } from 'react-tooltip';
 
-const OneSongDetails = ({
-    songs,
-    addFavorite,
-    removeFavorite,
-    currUser,
-    deleteSong,
+const OneSongDetailsPage = ({
+	songs,
+	addFavorite,
+	removeFavorite,
+	currUser,
+	deleteSong,
 }) => {
-    const { songId } = useParams();
-    const nav = useNavigate();
-    const filteredSong = songs.find((song) => song.id === songId);
-    const { uploadedBy } = filteredSong;
-	
+	const { songId } = useParams();
+	const nav = useNavigate();
+	const filteredSong = songs.find((song) => song.id === songId);
+	const { uploadedBy } = filteredSong;
 
-    if (!filteredSong) {
-        return <p>Song not found!</p>;
-    }
-
-	function memeRickFct(){
-				
-		nav(`/songs/1`)
-		
-		setTimeout(()=>{
-			window.alert("You just got rickroll'd :D")
-			
-		}, 500)
+	if (!filteredSong) {
+		return <p>Song not found!</p>;
 	}
-	
 
-    function handleDelete() {
-        deleteSong(filteredSong.id);
-        nav(`/songs`);
-    }
+	function memeRickFct() {
+		nav(`/songs/1`);
 
-    return (
-        <div className="for-all-divs">
-            <div className="one-song-detail">
-                <button className="memeBTN" onClick={() => {memeRickFct()}}>
-                    <img
-                        src={filteredSong.image}
-                        alt={filteredSong.title}
-                        data-tooltip-id="image-tooltip"
-                        data-tooltip-content={filteredSong.attribution}
-						
-                    />
-                </button>
-                <Tooltip id="image-tooltip" place="bottom" effect="float" />
-            </div>
+		setTimeout(() => {
+			window.alert("You just got rickroll'd :D");
+		}, 500);
+	}
+
+	function handleDelete() {
+		deleteSong(filteredSong.id);
+		nav(`/songs`);
+	}
+
+	return (
+		<div className="for-all-divs">
+			<div className="one-song-detail">
+				<button
+					className="memeBTN"
+					onClick={() => {
+						memeRickFct();
+					}}
+				>
+					<img
+						src={filteredSong.image}
+						alt={filteredSong.title}
+						data-tooltip-id="image-tooltip"
+						data-tooltip-content={filteredSong.attribution}
+					/>
+				</button>
+				<Tooltip
+					id="image-tooltip"
+					place="bottom"
+					effect="float"
+				/>
+			</div>
 			<div className="one-song-info">
-				<h2 className='h2-one-song'>
-					{filteredSong.title}{'                     '}
+				<h2 className="h2-one-song">
+					{filteredSong.title}
+					{'                     '}
 					{currUser && (
 						<div>
 							{currUser.favorites.includes(filteredSong.id) ? (
@@ -73,12 +78,11 @@ const OneSongDetails = ({
 									<FontAwesomeIcon icon={regularHeart} />
 								</button>
 							)}
-							
 						</div>
 					)}
 					{currUser && (
 						<div>
-						{currUser.id === uploadedBy.userId ? (
+							{currUser.id === uploadedBy.userId ? (
 								<div>
 									<Link to={`/edit-song/${filteredSong.id}`}>
 										<button className="for-all-songs-btn">
@@ -94,13 +98,13 @@ const OneSongDetails = ({
 								</div>
 							) : (
 								<span></span>
-							)}</div>
 							)}
-					
+						</div>
+					)}
 				</h2>
 				<h4>
-					By {filteredSong.artist}, <u>{filteredSong.album}</u>, {filteredSong.genre}, from the{' '} 
-					{filteredSong.decade}
+					By {filteredSong.artist}, <u>{filteredSong.album}</u>,{' '}
+					{filteredSong.genre}, from the {filteredSong.decade}
 				</h4>
 			</div>
 			<div className="trivia-box">
@@ -141,4 +145,4 @@ const OneSongDetails = ({
 	);
 };
 
-export default OneSongDetails;
+export default OneSongDetailsPage;

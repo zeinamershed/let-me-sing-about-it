@@ -1,16 +1,19 @@
 # Let Me Sing About it
 
 ## Description
+
 Let Me Sing About it is a karaoke application that allows users to explore a cool library of songs, watch YouTube videos for karaoke, and even save their favorite songs for easy access. Users can also contribute by adding new songs to the database, enhancing the collection for everyone.
 
 Let Me Sing About it aims to create a vibrant, fun-filled community of karaoke enthusiasts, making singing along to your favorite tunes easier and more enjoyable than ever!
 
 ## The Inspiration
+
 Everyone loves a good time, right? Our team sure does! Karaoke is the perfect activity to share with friends and family, and sometimes even foes! We were inspired to create Let Me Sing About it to make karaoke sessions more accessible, fun, and interactive for everyone.
 
-
 ## MVP
+
 The Minimum Viable Product (MVP) for Let Me Sing About it includes:
+
 <ul>
 <li>**Single Page Application (SPA):** A seamless user experience without page reloads.
 <li>**CRUD Functionality:** Full control for users over the songs database.
@@ -31,9 +34,10 @@ The Minimum Viable Product (MVP) for Let Me Sing About it includes:
 <li>**GitHub Repositories:** Separate repositories for front-end and back-end development to maintain a clean and organized codebase.
 </ul>
 
-
 ## Backlog
+
 Features to implement after the MVP:
+
 <ul>
 <li>**Confetti Animation:** Celebrate user sign-ups and random song selections with a burst of confetti.
 <li>**User Profile:** 
@@ -42,15 +46,15 @@ Features to implement after the MVP:
     <li>A section to view and edit songs they have added.
   </ul>
 
-
 ## Data structure
+
 <h3>Components</h3>
 <ul>
 <li>Footer
-<li>LogIn
+<li>LogInForm
 <li>Navbar
 <li>ScrollToTop
-<li>SignUp
+<li>SignUpForm
 </ul>
 
 <h3>Pages:</h3>
@@ -62,14 +66,15 @@ Features to implement after the MVP:
 <li>EditSongPage
 <li>FavoriteSongsPage
 <li>HomePage
-<li>NotFound
-<li>OneDecadeFiltered
-<li>OneSongDetails
+<li>NotFoundPage
+<li>OneDecadeFilteredPage
+<li>OneSongDetailsPage
 <li>ProfilePage
 <li>RandomSongPage
 </ul>
 
 ## Tasks
+
 <ul>
 <li>Set up the project repository on GitHub.
 <li>Create the basic HTML structure and link CSS and JS files.

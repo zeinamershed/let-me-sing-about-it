@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { API_URL } from '../config';
 import Confetti from 'react-confetti'
 
-const SignUp = ({ setCurrUser }) => {
+const SignUpForm = ({ setCurrUser }) => {
   const [username, setUsername] = useState('');
   const [fullname, setFullname] = useState('');
   const [password, setPassword] = useState('');
@@ -98,4 +98,4 @@ const SignUp = ({ setCurrUser }) => {
   );
 };
 
-export default SignUp
+export default SignUpForm
